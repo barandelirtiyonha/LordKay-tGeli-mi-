@@ -26,7 +26,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+  http.get(`BAKIMDAYIZ`);
 }, 280000);
 
 var prefix = ayarlar.prefix;
