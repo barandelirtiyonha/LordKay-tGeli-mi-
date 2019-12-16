@@ -17,7 +17,17 @@ const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
 //-----------------------------------------------\\
-
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log("ArdaDemr | Hostlandı");
+  response.sendStatus(200);
+});
+app.listen(8000);
+setInterval(() => {
+  http.get(`http://bosproje.glitch.me/`);
+}, 280000)
 //-----------------------------------------------\\
 
 var prefix = ayarlar.prefix;
