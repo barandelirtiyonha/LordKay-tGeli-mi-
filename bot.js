@@ -8,8 +8,6 @@ const { Client, Util } = require('discord.js');
 const weather = require('weather-js')
 const fs = require('fs');
 const db = require('quick.db');
-const http = require('http');
-const express = require('express');
 require('./util/eventLoader.js')(client);
 const path = require('path');
 const request = require('request');
@@ -18,16 +16,9 @@ const queue = new Map();
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
+//-----------------------------------------------\\
 
-const app = express();
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping tamamdır.");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`BAKIMDAYIZ`);
-}, 280000);
+//-----------------------------------------------\\
 
 var prefix = ayarlar.prefix;
 
@@ -132,3 +123,5 @@ client.on('error', e => {
 });
 
 client.login(ayarlar.token);
+
+//-----------------------KOMUTLAR-----------------------\\
