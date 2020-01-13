@@ -22,7 +22,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'reklam-taraması',
+    name: 'reklamtaraması',
   category: 'Yetkili',
     description: 'Kullanıcıların Oynuyor mesajındaki ve Kullanıcı adlarındaki reklamları tarar.',
     usage: 'reklam-taraması'

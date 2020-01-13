@@ -30,7 +30,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'tr',
+    name: 'bayrak',
     description: 'tr',
     usage: 'tr'
   };

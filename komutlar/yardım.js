@@ -19,16 +19,19 @@ exports.run = (client, msg) => {
 • {prefix}hapishane :: Profilinize hapishane efekti ekler
 • {prefix}hesapla <işlem> :: Yazdığınız işlemi hesaplar
 • {prefix}kartopu :: Kartopu atarsınız
-• /kapatotorol :: Oto rolü kapatır
-• /ping :: Botun pingini atar.
-• /rip :: Profilinize rip efekti ekler
-• /saat :: Türkiyemizin saatini gösterir
-• /sil 2-100 :: Chati temizler
-• /slots :: Slot oyununu oynarsınız
-• /stresçarkı :: Stres çarkı çevirir
-• /tersavatar :: Avatarınızı tersine çevirir
-• /tr :: Profilinize TÜRK BAYRAĞI Efekti ekler
-• /yaz yazı :: Bota yazı yazdırır`);
+• {prefix}karıştır <yazı> :: Yazdığınız yazıdaki harfleri karıştırır
+• {prefix}kick @etiket :: Kişiyi sunucudan atar
+• {prefix}ping :: Botunun pingini gösterir
+• {prefix}pixel :: Profilini bulanık yapar
+• {prefix}reklamtaraması :: Chati temizler
+• {prefix}rip :: Profilinize rip efekti ekler
+• {prefix}saat :: Türkiyenin saatini gösterir
+• {prefix}servericon :: Sunucunun profil resmini gösterir
+• {prefix}slowmode 1-10 :: Sohbete yavaşlık ekler
+• {prefix}stresçarkı :: Stres çarkı çevirir
+• {prefix}bayrak :: Profiline TÜRK BAYRAĞI efekti ekler
+• {prefix}wasted :: Profiline 
+• {prefix}stresçarkı :: Stres çarkı çevirir`);
 };
 
 exports.conf = {
