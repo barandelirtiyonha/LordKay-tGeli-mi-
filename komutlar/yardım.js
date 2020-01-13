@@ -1,0 +1,45 @@
+const Discord = require("discord.js");
+const moment = require("moment");
+require("moment-duration-format");
+
+exports.run = (client, msg) => {
+  const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
+  msg.channel.sendCode("asciidoc", `=YARDIM MENÜSÜ=
+• {prefix}adamasmaca :: Adam asmaca oynarsınız
+• {prefix}ateş-et @etiket :: Etiketlediğin kişiye ateş açar
+• {prefix}avatar :: Profil resmini atar
+• {prefix}aşkölçer @etiket :: Kişiye olan aşkını ölçer
+• {prefix}balıktut :: Şansa balık tutarsınız
+• {prefix}ban @etiket :: Kullanıcıya ban atarsınız
+• {prefix}düello @etiket :: Kişiye düello atar
+• {prefix}efkarım :: Efkarını Ölçer
+• {prefix}emojiler :: Sunucudaki emojileri atar
+• {prefix}emojiyazı <yazı> :: Emojilerle yazı yazarsınız
+• {prefix}fakemesaj @etiket <yazı> :: Etiketlediğin kişinin adına mesaj atar
+• {prefix}hapishane :: Profilinize hapishane efekti ekler
+• {prefix}hesapla <işlem> :: Yazdığınız işlemi hesaplar
+• {prefix}kartopu :: Kartopu atarsınız
+• /kapatotorol :: Oto rolü kapatır
+• /ping :: Botun pingini atar.
+• /rip :: Profilinize rip efekti ekler
+• /saat :: Türkiyemizin saatini gösterir
+• /sil 2-100 :: Chati temizler
+• /slots :: Slot oyununu oynarsınız
+• /stresçarkı :: Stres çarkı çevirir
+• /tersavatar :: Avatarınızı tersine çevirir
+• /tr :: Profilinize TÜRK BAYRAĞI Efekti ekler
+• /yaz yazı :: Bota yazı yazdırır`);
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['bot durum', 'i', 'bi', 'istatistikler', 'kullanımlar', 'botdurum', 'bd', 'istatisik', 'stats', 'stat'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'yardım',
+  description: 'Botun istatistik gösterir.',
+  usage: 'istatistik'
+};
