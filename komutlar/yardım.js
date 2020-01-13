@@ -30,7 +30,7 @@ exports.run = (client, msg) => {
 • {prefix}slowmode 1-10 :: Sohbete yavaşlık ekler
 • {prefix}stresçarkı :: Stres çarkı çevirir
 • {prefix}bayrak :: Profiline TÜRK BAYRAĞI efekti ekler
-• {prefix}wasted :: Profiline 
+• {prefix}wasted :: Profiline wasted efekti ekler
 • {prefix}stresçarkı :: Stres çarkı çevirir`);
 };
 
