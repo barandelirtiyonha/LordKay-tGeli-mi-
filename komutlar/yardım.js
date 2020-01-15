@@ -3,7 +3,6 @@ const moment = require("moment");
 require("moment-duration-format");
 
 exports.run = (client, msg) => {
-  const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   msg.channel.sendCode("asciidoc", `=YARDIM MENÜSÜ=
 • {prefix}adamasmaca :: Adam asmaca oynarsınız
 • {prefix}ateş-et @etiket :: Etiketlediğin kişiye ateş açar
@@ -30,14 +29,13 @@ exports.run = (client, msg) => {
 • {prefix}slowmode 1-10 :: Sohbete yavaşlık ekler
 • {prefix}stresçarkı :: Stres çarkı çevirir
 • {prefix}bayrak :: Profiline TÜRK BAYRAĞI efekti ekler
-• {prefix}wasted :: Profiline wasted efekti ekler
-• {prefix}stresçarkı :: Stres çarkı çevirir`);
+• {prefix}wasted :: Profiline wasted efekti ekler`);
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['bot durum', 'i', 'bi', 'istatistikler', 'kullanımlar', 'botdurum', 'bd', 'istatisik', 'stats', 'stat'],
+  aliases: ['yardım', 'youtube', 'yardım menüsü', 'help'],
   permLevel: 0
 };
 
