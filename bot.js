@@ -174,37 +174,3 @@ client.on("guildMemberAdd", async (member) => {
       member.addRole(role)
 
 });
-
-//-----------------------Otorol Son-----------------------\\
-//-----------------------Otorol Son-----------------------\\
-//-----------------------Otorol Son-----------------------\\
-//-----------------------Otorol Son-----------------------\\
-
-
-client.on("guildMemberAdd", async member => {
-  let sayac = await db.fetch(`sayac_${member.guild.id}`);
-  let skanal9 = await db.fetch(`sayacK_${member.guild.id}`);
-  if (!skanal9) return;
-  const skanal31 = member.guild.channels.find("name", skanal9);
-  if (!skanal31) return;
-  skanal31.send(
-   ` \`${
-       member.user.tag
-    }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı. <a:onay:681083728440852500> `
-  );
-});
-
-client.on("guildMemberRemove", async member => {
-  let sayac = await db.fetch(`sayac_${member.guild.id}`);
-  let skanal9 = await db.fetch(`sayacK_${member.guild.id}`);
-  if (!skanal9) return;
-  const skanal31 = member.guild.channels.find("name", skanal9);
-  if (!skanal31) return;
-  skanal31.send(
-    ` \`${
-      member.user.tag
-    }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı <a:aniblobsweat:683240339758120969>`
-  );
-});
