@@ -21,7 +21,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 app.get("/", (request, response) => {
-  console.log("ArdaDemr | Hostlandı");
+  console.log("EmreHD35 | Hostlandı");
   response.sendStatus(200);
 });
 app.listen(8000);
@@ -135,3 +135,47 @@ client.on('error', e => {
 client.login(ayarlar.token);
 
 //-----------------------KOMUTLAR-----------------------\\
+
+//-----------------------Otorol-----------------------\\
+//-----------------------Otorol-----------------------\\
+//-----------------------Otorol-----------------------\\
+//-----------------------Otorol-----------------------\\
+
+
+client.on("guildMemberAdd", async member => {
+        let sayac = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
+  let otorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
+      let arole = otorole[member.guild.id].sayi
+  let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8")); 
+  let embed = new Discord.RichEmbed()
+    .setTitle('Otorol Sistemi')
+    .setDescription(`:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Başarılıyla Verilmiştir. `)
+.setColor("GREEN")
+    .setFooter("ForumGrand", client.user.avatarURL);
+
+  if (!giriscikis[member.guild.id].kanal) {
+    return;
+  }
+
+  try {
+    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
+    let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
+    giriscikiskanali.send(`::loudspeaker: :white_check_mark: :rose: Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir. :rose: :white_check_mark: :loudspeaker:`);
+  } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
+    return console.log(e)
+  }
+
+});
+
+client.on("guildMemberAdd", async (member) => {
+      let autorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
+      let role = autorole[member.guild.id].sayi
+
+      member.addRole(role)
+
+});
+
+//-----------------------Otorol Son-----------------------\\
+//-----------------------Otorol Son-----------------------\\
+//-----------------------Otorol Son-----------------------\\
+//-----------------------Otorol Son-----------------------\\

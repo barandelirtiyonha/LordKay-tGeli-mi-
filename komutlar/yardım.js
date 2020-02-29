@@ -1,35 +1,19 @@
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 
-let botid = ('672381245115727911') //bu yere botun id'sini yapıştırın.
+let botid = ('681938616611897365') //bu yere botun id'sini yapıştırın.
 //eğer botunuz dbl(discord bot list) de yoksa Bota Oy Ver (Vote) olmucaktır.
 
 exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
         .setAuthor(`${client.user.username} `, client.user.avatarURL)
         .setColor('#00ff1f')
-        .setTitle(`${client.user.username} - Komutlar`)
-        .setDescription(`<a:di:681084642371305582>**cr!adamasmaca** Adam asmaca oynarsınız
-<a:di:681084642371305582>**cr!ateş-et @etiket** Etiketlediğin kişiye ateş açar
-<a:di:681084642371305582>**cr!aşkölçer @etiket** Kişiye olan aşkını ölçer
-<a:di:681084642371305582>**cr!balıktut** Şansa balık tutarsınız
-<a:di:681084642371305582>**cr!düello @etiket** Kişiye düello atar
-<a:di:681084642371305582>**cr!efkarım** Efkarını Ölçer
-<a:di:681084642371305582>**cr!emojiler** Sunucudaki emojileri atar
-<a:di:681084642371305582>**cr!emojiyazı <yazı>** Emojilerle yazı yazarsınız
-<a:di:681084642371305582>**cr!hapishane** Profilinize hapishane efekti ekler
-<a:di:681084642371305582>**cr!hesapla <işlem>** Yazdığınız işlemi hesaplar
-<a:di:681084642371305582>**cr!kartopu** Kartopu atarsınız
-<a:di:681084642371305582>**cr!karıştır <yazı>** Yazdığınız yazıdaki harfleri karıştırır
-<a:di:681084642371305582>**cr!pixel** Profilini bulanık yapar
-<a:di:681084642371305582>**cr!reklamtaraması** Chati temizler
-<a:di:681084642371305582>**cr!rip** Profilinize rip efekti ekler
-<a:di:681084642371305582>**cr!saat** Türkiyenin saatini gösterir
-<a:di:681084642371305582>**cr!stresçarkı** Stres çarkı çevirir
-<a:di:681084642371305582>**cr!bayrak** Profiline TÜRK BAYRAĞI efekti ekler
-<a:di:681084642371305582>**cr!wasted** Profiline wasted efekti ekler
-<a:di:681084642371305582>**cr!kaçcm** Uzunluk Ölçer :D`)  
+        .setTitle(`<a:te:681510124178767892>${client.user.username} - Komutlar<a:te2:681510124568707084>`)
+        .setDescription(`<a:di:681084642371305582>**${ayarlar.prefix}yetkili** Yetkili Komutları.\n <a:di:681084642371305582>**${ayarlar.prefix}kullanıcı** Kullanıcıya Komutları.\n ` + `<a:di:681084642371305582>**${ayarlar.prefix}seviyeyardım**  Seviyeyardım Komutları Gösterir.\n` + `<a:di:681084642371305582>**${ayarlar.prefix}eğlence** Eğlence Komutlarını Gösterir.\n` + `<a:di:681084642371305582>**${ayarlar.prefix}müzik** Müzik Komutlarını Gösterir.\n <a:di:681084642371305582>**${ayarlar.prefix}bot** Bot Komutlarını Gösterir.\n <a:8299_Loading1:608249368386207751>**${ayarlar.prefix}vip** Bakım :outbox_tray:\n`)  
         .setThumbnail(client.user.avatarURL)
+        .addField(`» Linkler`, `
+[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=681938616611897365&scope=bot&permissions=2146958847)
+[Destek Sunucusu](https://discord.gg/SupP7w6)`)
         .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
         .setImage("")  
     return message.channel.sendEmbed(embed);
@@ -40,12 +24,12 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['eğlen','eglence'],
+  aliases: ['yar','help'],
   permLevel: 0,
 };
 
 exports.help = {
-  name: 'eğlence',
+  name: 'yardım',
   description: '',
   usage: ''
 };
