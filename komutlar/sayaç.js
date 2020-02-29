@@ -1,23 +1,38 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
-
+ 
 exports.run = async (client, message, args) => {
- 
-  let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
- 
+  
   const sayacsayi = await db.fetch(`sayac_${message.guild.id}`);
-  const sayackanal = message.mentions.channels.first() || message.channel
- 
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
+  const sayackanal = message.mentions.channels.first()
+  
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.<a:yak:681126681582501900>`);
         
   if(!args[0]) {
-    message.channel.send(`Bir sayı yazmalısın. Yazdıktan sonra bir kanal etiketlemelisin. \`${prefix}sayaç 100 #sayaç\``)
+    message.channel.send(`Bir sayı yazmalısın.<a:yak:681126681582501900>`)
     return
   }
- 
+  
+  if(!sayackanal) {
+   message.channel.send(`Sayaç kanalını etiketlemelisin.<a:yak:681126681582501900>`)
+  }
+  
+  
+  if(args[0] === "sıfırla") {
+    if(!sayacsayi) {
+      message.channel.send(`Ayarlanmayan şeyi sıfırlayamazsın.<a:yak:681126681582501900>`)
+      return
+    }
+    
+    db.delete(`sayac_${message.guild.id}`)
+    db.delete(`sayacK_${message.guild.id}`)
+    message.channel.send(`Sayaç başarıyla sıfırlandı.<a:onay:681083728440852500>`)
+    return
+  }
+  
   if(isNaN(args[0])) {
-    message.channel.send(`Bir sayı yazmalısın.`)
+    message.channel.send(`Bir sayı yazmalısın.<a:yak:681126681582501900>`)
     return
   }
  
@@ -25,11 +40,11 @@ exports.run = async (client, message, args) => {
                 message.channel.send(`Sunucudaki kullanıcı sayısından (${message.guild.members.size}) daha yüksek bir değer girmelisin.`)
                 return
         }
- 
+  
   db.set(`sayac_${message.guild.id}`, args[0])
-  db.set(`sayacK_${message.guild.id}`, sayackanal.id)
- 
-  message.channel.send(`<a:onay:681083728440852500>Sayaç \`${args[0]}\`, sayaç kanalı ${sayackanal} olarak ayarlandı.<a:onay:681083728440852500>Kapatmak için \`${prefix}kapat sayaç\` yazmalısın.`)
+  db.set(`sayacK_${message.guild.id}`, sayackanal.name)
+  
+  message.channel.send(`Sayaç \`${args[0]}\`, sayaç kanalı ${sayackanal} olarak ayarlandı.<a:onay:681083728440852500>`)
 }
  
 exports.conf = {
