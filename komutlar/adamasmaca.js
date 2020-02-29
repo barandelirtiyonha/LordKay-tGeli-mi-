@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
             const display = new Array(cevap.length).fill('_');
             while (cevap.length !== confirmation.length && point < 6) {
                 await message.channel.send(stripIndents`
-                    ${displayText === null ? '**Achim Adam Asmaca**!' : displayText ? '**Çok iyisin!**' : '**Yanlış Harf!**'}
+                    ${displayText === null ? '**Adam Asmaca**!' : displayText ? '**Çok iyisin!**' : '**Yanlış Harf!**'}
                          **Kelime:**    \`${display.join(' ')}\`
                     **Yanlış Harfler:** ${yanlış.join(', ') || 'Yok'}
                     \`\`\`
