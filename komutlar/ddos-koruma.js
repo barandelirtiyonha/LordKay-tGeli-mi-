@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
         .setDescription(`DDOS-Koruma Hakında
 Discord Sunucularına Saldırı Olduğunda Sunucunuzun Bögesini Değiştirir Ve Sunucunuzu Ping Ten Korur
 
-Nası Açılır Bir Yazı Oda Kurun Adı:ddos-koruma Adını Değiştirirseniz Çalışmaz!
+Nası Açılır Bir Yazı Odası Kurun Adı:ddos-koruma Adını Değiştirirseniz Çalışmaz!
 
 Unutma Sadece 1000 Ping Olunca Çalışır Ve ddos-koruma Odasına Hep Mesaj Atmaz`)  
         .setThumbnail(client.user.avatarURL)
