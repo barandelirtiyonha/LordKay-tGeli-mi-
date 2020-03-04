@@ -9,7 +9,11 @@ exports.run = (client, message, args) => {
         .setAuthor(`${client.user.username} `, client.user.avatarURL)
         .setColor('#00ff1f')
         .setTitle(`<a:te:681510124178767892>${client.user.username} - DDOS Bilgi <a:te2:681510124568707084>`)
-        .setDescription(``)  
+        .setDescription(`DDOS-Koruma Hakında
+Discord Sunucularına Saldırı Olduğunda Sunucunuzun Bögesini Değiştirir Ve Sunucunuzu Ping Ten Korur
+
+Nası Açılır Bir Yazı Oda Kurun Adı:ddos-koruma Adını Değiştirirseniz Çalışmaz!
+Bot Odaya Çok Sık Mesaj Atmaz`)  
         .setThumbnail(client.user.avatarURL)
         .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
         .setImage("")  
