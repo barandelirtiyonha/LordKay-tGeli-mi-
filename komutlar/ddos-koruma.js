@@ -13,7 +13,8 @@ exports.run = (client, message, args) => {
 Discord Sunucularına Saldırı Olduğunda Sunucunuzun Bögesini Değiştirir Ve Sunucunuzu Ping Ten Korur
 
 Nası Açılır Bir Yazı Oda Kurun Adı:ddos-koruma Adını Değiştirirseniz Çalışmaz!
-Bot Odaya Çok Sık Mesaj Atmaz`)  
+
+Unutma Sadece 1000 Ping Olunca Çalışır Ve ddos-koruma Odasına Hep Mesaj Atmaz`)  
         .setThumbnail(client.user.avatarURL)
         .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
         .setImage("")  
