@@ -8,6 +8,8 @@ const { Client, Util } = require('discord.js');
 const weather = require('weather-js')
 const fs = require('fs');
 const db = require('quick.db');
+let kufurEngel = JSON.parse(fs.readFileSync("./jsonlar/kufurEngelle.json", "utf8"));
+let linkEngel = JSON.parse(fs.readFileSync("././jsonlar/linkEngelle.json", "utf8"));
 require('./util/eventLoader.js')(client);
 const path = require('path');
 const request = require('request');
@@ -15,6 +17,7 @@ const snekfetch = require('snekfetch');
 const queue = new Map();
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
+
 
 //-----------------------------------------------\\
 const http = require('http');
@@ -663,3 +666,38 @@ let rrrsembed = new Discord.RichEmbed()
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 //-----------------------Eklendim-Atıldım Son-----------------------\\
+
+client.on("message", msg => {
+  if (!msg.guild) return;
+  if (!kufurEngel[msg.guild.id]) return;
+  if (kufurEngel[msg.guild.id].küfürEngel === 'kapali') return;
+    if (kufurEngel[msg.guild.id].küfürEngel=== 'acik') {
+      const kufur = ["mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git"];
+  if (kufur.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.reply("Küfür filtresi, aktif!").then(message => message.delete(3000));
+    }
+}
+    }
+});
+
+client.on("message", msg => { 
+if (!linkEngel[msg.guild.id]) return;
+if (linkEngel[msg.guild.id].linkEngel === "kapali") return;
+    if (linkEngel[msg.guild.id].linkEngel === "acik") {
+    var regex = new RegExp(/(discord.gg|http|.gg|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/)
+    if (regex.test(msg.content)== true) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.channel.send(`<@${msg.author.id}>`).then(message => message.delete(5000));
+        var e = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor("Link Engeli!")
+        .setDescription(`Bu sunucuda linkler **${client.user.username}** tarafından engellenmektedir! Link atmana izin vermeyeceğim!`)
+        msg.channel.send(e).then(message => message.delete(5000));
+    }
+}
+    }
+});
+   
