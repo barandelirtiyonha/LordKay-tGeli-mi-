@@ -701,21 +701,21 @@ client.on("message", async msg => {
         
     let i = await db.fetch(`küfürFiltre_${msg.guild.id}`) 
           if (i == 'acik') {
-              const küfür = ["discord.app", "discord.gg", "invite","discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az",];
+              const küfür = ["o*", "a*k", "ananı s*k*y*m", "anan*s*km", "p*ç", "a*k", "am*sk", "s*k*m", "s*kiy*m", "or*sp* ç*c*ğu", "p*ç k*r*su", "ka*pe", "oro*p*", "m*l", "s*k", "ya*r*k", "a*", "a*c*k", "am*k", "y*r*am", "s*k*m* ye", "m*", "m*", "a*", "a*", "a*q", "amk", "mk", "amq", "orospi", "orospu", "piç", "pıç", "velet", "sik", "sık", "yarak", "yarrak", "am", "göt", "got", "meme", "sg", "mal", "ananı sikeyim"];
               if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
                 try {
                   if (!msg.member.hasPermission("MANAGE_GUILD")) {
                     msg.delete();                   
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
-                    .setFooter('CraftingRoyal BOT  -|-  Reklam engellendi.', client.user.avatarURL)
+                    .setFooter('CraftingRoyal BOT  -|-  Küfür Engel.', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("CraftingRoyal BOT Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .setDescription("CraftingRoyal BOT Küfür sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
                     .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
-                    msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
+                    msg.guild.owner.user.send(embed)            
+                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -724,5 +724,7 @@ client.on("message", async msg => {
           }
           if (!i) return;
   });
+
+
 
    

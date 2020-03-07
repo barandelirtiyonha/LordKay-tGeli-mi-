@@ -1,10 +1,38 @@
-const db = require('quick.db') 
-const Discord = require('discord.js')
-exports.run = async (bot, message, args) => { if (!args[0]) return message.channel.send('aç yada kapat yazmalısın! Örnek: küfür-engel aç')
-if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('`SUNUCUYU_YÖNET` yetkisine sahip olmalısın!')
-                                             if (args[0] == 'aç') { db.set(`kufur_${message.guild.id}`, 'acik').then(i => { message.channel.send('✅ Küfur Engel başarıyla açıldı! Üyeleri Yasakla yetkisine sahip olanların küfürü engellenmicektir.') }) }
-                                             if (args[0] == 'kapat') { db.set(`kufur_${message.guild.id}`, 'kapali').then(i => { message.channel.send('✅ Küfür Engel başarıyla kapatıldı! Artık herkes küfür yazabilir.') }) } } 
-exports.conf = { enabled: true, guildOnly: false, aliases: ['küfür'], permLevel: 0 }; exports.help = { 
-  name: 'küfür-engelleme', 
-  description: '[Admin Komutu]', 
-  usage: 'küfür-engelleme' };
+const Discord = require('discord.js');
+const db = require('quick.db');
+
+exports.run = async(client, message, args) => {
+
+  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(` Bu komudu kullanabilmek için "Sunucuyu Yönet" yetkisine sahip olman gerek.`)
+  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`cr!küfür-engel aç\` | Kapatmak İstiyorsanız \`cr!küfür-engel kapat\` Yazabilirsiniz`)
+  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Küfür Filtresini Ayarlamak İçin \`cr!küfür-engel aç\` | Kapatmak İstiyorsanız \`cr!küfür-engel  kapat\` Yazabilirsiniz`)
+
+    if (args[0] == 'aç') {
+    db.set(`küfürFiltre_${message.guild.id}`, 'acik')
+    let i = await db.fetch(`reklamFiltre_${message.guild.id}`)
+  message.channel.send(`<a:onay:681083728440852500>Küfür Filtresi başarıyla ayarlandı<a:onay:681083728440852500>`)   
+    
+  }
+
+  if (args[0] == 'kapat') {
+      
+    db.delete(`küfürFiltre_${message.guild.id}`)
+    
+    message.channel.send(`<a:onay:681083728440852500>Küfür Filtresini Kapattım<a:onay:681083728440852500>`)
+  }
+ 
+};
+
+
+exports.conf = {
+ enabled: true,
+ guildOnly: false,
+  aliases: ['küfür-engel'],
+ permLevel: 0
+};
+
+exports.help = {
+ name: 'küfür-engel',
+ description: 'reklamm',
+ usage: 's$$kanal'
+};

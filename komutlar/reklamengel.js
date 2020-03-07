@@ -27,7 +27,7 @@ exports.run = async(client, message, args) => {
 exports.conf = {
  enabled: true,
  guildOnly: false,
-  aliases: ['reklam', 'reklam-filtresi', 'reklamfiltresi', 'reklam-filtre', 'reklamfiltre'],
+  aliases: ['link-engel'],
  permLevel: 0
 };
 
