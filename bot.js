@@ -8,8 +8,6 @@ const { Client, Util } = require('discord.js');
 const weather = require('weather-js')
 const fs = require('fs');
 const db = require('quick.db');
-let kufurEngel = JSON.parse(fs.readFileSync("./jsonlar/kufurEngelle.json", "utf8"));
-let linkEngel = JSON.parse(fs.readFileSync("././jsonlar/linkEngelle.json", "utf8"));
 require('./util/eventLoader.js')(client);
 const path = require('path');
 const request = require('request');
@@ -667,37 +665,33 @@ let rrrsembed = new Discord.RichEmbed()
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 
-client.on("message", msg => {
-  if (!msg.guild) return;
-  if (!kufurEngel[msg.guild.id]) return;
-  if (kufurEngel[msg.guild.id].küfürEngel === 'kapali') return;
-    if (kufurEngel[msg.guild.id].küfürEngel=== 'acik') {
-      const kufur = ["mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git"];
-  if (kufur.some(word => msg.content.toLowerCase().includes(word)) ) {
-    if (!msg.member.hasPermission("ADMINISTRATOR")) {
-      msg.delete()
-       msg.reply("Küfür filtresi, aktif!").then(message => message.delete(3000));
-    }
-}
-    }
-});
-
-client.on("message", msg => { 
-if (!linkEngel[msg.guild.id]) return;
-if (linkEngel[msg.guild.id].linkEngel === "kapali") return;
-    if (linkEngel[msg.guild.id].linkEngel === "acik") {
-    var regex = new RegExp(/(discord.gg|http|.gg|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/)
-    if (regex.test(msg.content)== true) {
-    if (!msg.member.hasPermission("ADMINISTRATOR")) {
-      msg.delete()
-       msg.channel.send(`<@${msg.author.id}>`).then(message => message.delete(5000));
-        var e = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setAuthor("Link Engeli!")
-        .setDescription(`Bu sunucuda linkler **${client.user.username}** tarafından engellenmektedir! Link atmana izin vermeyeceğim!`)
-        msg.channel.send(e).then(message => message.delete(5000));
-    }
-}
-    }
-});
+client.on("message", async msg => {
+    if(msg.author.bot) return;
+    if(msg.channel.type === "dm") return;
+        
+    let i = await db.fetch(`reklamFiltre_${msg.guild.id}`) 
+          if (i == 'acik') {
+              const reklam = ["discord.app", "discord.gg", "invite","discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az",];
+              if (reklam.some(word => msg.content.toLowerCase().includes(word))) {
+                try {
+                  if (!msg.member.hasPermission("MANAGE_GUILD")) {
+                    msg.delete();                   
+                    let embed = new Discord.RichEmbed()
+                    .setColor(0xffa300)
+                    .setFooter('$adis BOT  -|-  Reklam engellendi.', client.user.avatarURL)
+                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
+                    .setDescription("$adis BOT Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
+                    .addField('Engellenen mesaj', msg.content, true)
+                    .setTimestamp()                   
+                    msg.guild.owner.user.send(embed)                       
+                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Lanet Zenci!`).then(msg => msg.delete(25000));
+                  }             
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+          }
+          if (!i) return;
+  });
    
