@@ -701,7 +701,7 @@ client.on("message", async msg => {
         
     let i = await db.fetch(`küfürFiltre_${msg.guild.id}`) 
           if (i == 'acik') {
-              const küfür = ["o*", "a*k", "ananı s*k*y*m", "anan*s*km", "p*ç", "a*k", "am*sk", "s*k*m", "s*kiy*m", "or*sp* ç*c*ğu", "p*ç k*r*su", "ka*pe", "oro*p*", "m*l", "s*k", "ya*r*k", "a*", "a*c*k", "am*k", "y*r*am", "s*k*m* ye", "m*", "m*", "a*", "a*", "a*q", "amk", "mk", "amq", "orospi", "orospu", "piç", "pıç", "velet", "sik", "sık", "yarak", "yarrak", "am", "göt", "got", "meme", "sg", "mal", "ananı sikeyim"];
+              const küfür = ["amk", "amq", "orospu", "piç", "pıç", "göt", "meme", "got", "sg", "aq", "AMK", "AMQ", "OROSPU", "PİÇ",];
               if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
                 try {
                   if (!msg.member.hasPermission("MANAGE_GUILD")) {
