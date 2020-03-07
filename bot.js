@@ -624,3 +624,42 @@ client.on("guildMemberAdd", async member => {
 //-----------------------Büyük Harf Son-----------------------\\
 //-----------------------Büyük Harf Son-----------------------\\
 //-----------------------Büyük Harf Son-----------------------\\
+
+//-----------------------Eklendim-Atıldım-----------------------\\
+//-----------------------Eklendim-Atıldım-----------------------\\
+//-----------------------Eklendim-Atıldım-----------------------\\
+//-----------------------Eklendim-Atıldım-----------------------\\
+
+//Bot Eklenme Mesaj Kodu
+client.on('guildCreate', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("GREEN")
+.setTitle(`${guild.name} Sunucusuna Katıldım! :inbox_tray:`)
+.addField('Katıldığım Sunucunun Sahibi', ` \`\`\`${guild.owner.user.username}\`\`\` `)
+.addField('Sunucudaki Kişi Sayısı', ` \`\`\`${guild.memberCount}\`\`\` `)
+.setThumbnail(`${guild.iconURL} `)
+
+   client.channels.get('685776379718926396').send(rrrsembed);
+ });
+
+//Bot Atılma Mesaj Kodu
+client.on('guildDelete', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("RED")
+.setTitle(`${guild.name} Sunucusundan Atıldım! :outbox_tray:`)
+.addField('Atıldığım Sunucunun Sahibi', ` \`\`\`${guild.owner.user.username}\`\`\` `)
+.addField('Sunucudaki Kişi Sayısı', ` \`\`\`${guild.memberCount}\`\`\` `)
+.setThumbnail(`${guild.iconURL} `)
+
+   client.channels.get('685776379718926396').send(rrrsembed);
+ 
+});
+
+//-----------------------Eklendim-Atıldım Son-----------------------\\
+//-----------------------Eklendim-Atıldım Son-----------------------\\
+//-----------------------Eklendim-Atıldım Son-----------------------\\
+//-----------------------Eklendim-Atıldım Son-----------------------\\
