@@ -701,7 +701,7 @@ client.on("message", async msg => {
         
     let i = await db.fetch(`küfürFiltre_${msg.guild.id}`) 
           if (i == 'acik') {
-              const küfür = ["amk", "amq", "orospu", "piç", "pıç", "göt", "meme", "got", "sg", "aq", "AMK", "AMQ", "OROSPU", "PİÇ",];
+              const küfür = ["amk", "amq", "orospu", "piç", "pıç", "göt", "got", "sg", "aq", "AMK", "AMQ", "OROSPU", "PİÇ",];
               if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
                 try {
                   if (!msg.member.hasPermission("MANAGE_GUILD")) {
