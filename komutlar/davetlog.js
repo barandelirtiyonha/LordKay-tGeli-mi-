@@ -4,7 +4,7 @@ const Discord = require("discord.js")
 const db = require("quick.db")
 
 exports.run = async (bot, message, args) => {
-  let davetlog = JSON.parse(fs.readFileSync('./jsonlar/davetlog.json', 'utf8'));
+  let davetlog = JSON.parse(fs.readFileSync('./ayarlar/davetlog.json', 'utf8'));
   let kanalid = message.channel.id,
     guildID = message.guild.id,
     davetlkanal;
@@ -14,7 +14,7 @@ exports.run = async (bot, message, args) => {
 
   if (!args[0]) 
 return message.channel.send(`
-**Davet Log:** \`\`${ayarlar.prefix}ayar davetlog #davet-log\`\` | **Kapatmak için**: \`\`${ayarlar.prefix}ayar davetlog kapat\`\` 
+**Davet Log:** \`\`${ayarlar.prefix}davet davetlog #davet-log\`\` | **Kapatmak için**: \`\`${ayarlar.prefix}davet davetlog kapat\`\` 
 
 **Davet Log Kanalı:**  ${davetlkanal} (${davetlog[guildID] == undefined ? "" : davetlog[guildID]}) `);
 
@@ -27,7 +27,7 @@ return message.channel.send(`
       if (!args[1]) return message.channel.send("Lütfen kanal belirtin!");
       if (args[1].toLowerCase() == "kapat") {
         delete davetlog[guildID];
-        fs.writeFile('./jsonlar/davetlog.json', JSON.stringify(davetlog), (err) => {
+        fs.writeFile('./ayarlar/davetlog.json', JSON.stringify(davetlog), (err) => {
           if (err) console.log(err);
         });
         message.channel.send("Davet Log Kanalı Kapatıldı!");
@@ -48,12 +48,12 @@ return message.channel.send(`
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["ayarlar"],
+  aliases: ["davet"],
   permLevel: 3
 };
 
 module.exports.help = {
-  name: 'ayar',
+  name: 'davetlog',
   description: '',
   usage: 'ayar hg&bb #kanal'
 };

@@ -665,6 +665,11 @@ let rrrsembed = new Discord.RichEmbed()
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 
+//-----------------------Küfür Engel Link Engel-----------------------\\
+//-----------------------Küfür Engel Link Engel-----------------------\\
+//-----------------------Küfür Engel Link Engel-----------------------\\
+//-----------------------Küfür Engel Link Engel-----------------------\\
+
 client.on("message", async msg => {
     if(msg.author.bot) return;
     if(msg.channel.type === "dm") return;
@@ -725,6 +730,15 @@ client.on("message", async msg => {
           if (!i) return;
   });
 
+//-----------------------Küfür Engel Link Engel Son-----------------------\\
+//-----------------------Küfür Engel Link Engel Son-----------------------\\
+//-----------------------Küfür Engel Link Engel Son-----------------------\\
+//-----------------------Küfür Engel Link Engel Son-----------------------\\
+
+//-----------------------DavetLog-----------------------\\
+//-----------------------DavetLog-----------------------\\
+//-----------------------DavetLog-----------------------\\
+//-----------------------DavetLog-----------------------\\
 
 const invites = {};
 const wait = require('util').promisify(setTimeout);
@@ -755,7 +769,9 @@ const embed = new Discord.RichEmbed()
   });
   })
 })
-//XiR
 
-
+//-----------------------DavetLog Son -----------------------\\
+//-----------------------DavetLog Son -----------------------\\
+//-----------------------DavetLog Son -----------------------\\
+//-----------------------DavetLog Son -----------------------\\
    
