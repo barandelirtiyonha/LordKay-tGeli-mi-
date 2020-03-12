@@ -43,7 +43,7 @@ dependencies:
   speedtest-net: 2.1.1
   steam-provider: 0.3.2
   superagent: 5.2.2
-  svjsl: 1.8.3
+  svjsl: 1.8.4
   tcmb-doviz: 1.0.5
   tempy: 0.5.0
   turkcealtyazi: 0.3.0
@@ -4062,10 +4062,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
-  /svjsl/1.8.3:
+  /svjsl/1.8.4:
     dev: false
     resolution:
-      integrity: sha512-QW8i8KjJaAzWeycJ0L2vUALtaMtrRyihDWFJVMRLc0Z5X5X2R9ihml6BS7Ju3bxXKnXcVhYc7keFAAvvcahcng==
+      integrity: sha512-U+RX1x7Tslxx68GAr1F9wBaRAjCA9cFliOSOvtWqVuVg0IRUdStsMYah/3Q8gluRomD/h3co7q4MYU62kTwzmA==
   /symbol-tree/3.2.4:
     dev: false
     optional: true
@@ -4602,7 +4602,7 @@ specifiers:
   speedtest-net: ^2.1.0
   steam-provider: ^0.3.2
   superagent: ^5.2.2
-  svjsl: ^1.8.3
+  svjsl: ^1.8.4
   tcmb-doviz: ^1.0.5
   tempy: ^0.5.0
   turkcealtyazi: ^0.3.0
