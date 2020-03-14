@@ -690,7 +690,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, <a:hz:681134656527269962>Reklam Yapmak Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -720,7 +720,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)            
-                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, <a:hz:681134656527269962>Küfür Etmek Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -760,7 +760,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)            
-                    return msg.channel.send(`${msg.author.tag}, Bir Yetkili Sohbeti Kapatmış Yazamasın <a:yak:681126681582501900>`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, <a:hz:681134656527269962>Bir Yetkili Sohbeti Kapatmış Yazamasın<a:hz:681134656527269962>`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
