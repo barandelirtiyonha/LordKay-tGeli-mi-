@@ -10,7 +10,7 @@ exports.run = async(client, message, args) => {
     if (args[0] == 'aç') {
     db.set(`sohbet_${message.guild.id}`, 'acik')
     let i = await db.fetch(`reklamFiltre_${message.guild.id}`)
-  message.channel.send(`<a:onay:681083728440852500>Küfür Filtresi başarıyla ayarlandı<a:onay:681083728440852500>`)   
+  message.channel.send(`<a:onay:681083728440852500>Sohbet Başarıyla Kapatıldı<a:onay:681083728440852500>`)   
     
   }
 
@@ -18,7 +18,7 @@ exports.run = async(client, message, args) => {
       
     db.delete(`sohbet_${message.guild.id}`)
     
-    message.channel.send(`<a:onay:681083728440852500>Küfür Filtresini Kapattım<a:onay:681083728440852500>`)
+    message.channel.send(`<a:onay:681083728440852500>Sohbet Başarıyla Açıldı<a:onay:681083728440852500>`)
   }
  
 };
