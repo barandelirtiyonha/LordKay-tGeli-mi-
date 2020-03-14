@@ -679,7 +679,7 @@ client.on("message", async msg => {
               const reklam = ["discord.app", "discord.gg", "invite","discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az",];
               if (reklam.some(word => msg.content.toLowerCase().includes(word))) {
                 try {
-                  if (!msg.member.hasPermission("MANAGE_GUILD")) {
+                  if (!msg.member.hasPermission("ADMINISTRATOR")) {
                     msg.delete();                   
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
@@ -709,14 +709,14 @@ client.on("message", async msg => {
               const küfür = ["amk", "amq", "orospu", "piç", "pıç", "göt", "got", "sg", "aq", "AMK", "AMQ", "OROSPU", "PİÇ",];
               if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
                 try {
-                  if (!msg.member.hasPermission("MANAGE_GUILD")) {
+                  if (!msg.member.hasPermission("ADMINISTRATOR")) {
                     msg.delete();                   
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
                     .setFooter('CraftingRoyal BOT  -|-  Küfür Engel.', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("CraftingRoyal BOT Küfür sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
-                    .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
+                    .setDescription("CraftingRoyal BOT Küfür sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
+                    .addField('Küfür eden kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)            
@@ -735,21 +735,38 @@ client.on("message", async msg => {
 //-----------------------Küfür Engel Link Engel Son-----------------------\\
 //-----------------------Küfür Engel Link Engel Son-----------------------\\
 
-//-----------------------SunucuPanel-----------------------\\
-//-----------------------SunucuPanel-----------------------\\
-//-----------------------SunucuPanel-----------------------\\
-//-----------------------SunucuPanel-----------------------\\
+//-----------------------SohbetKapat-----------------------\\
+//-----------------------SohbetKapat-----------------------\\
+//-----------------------SohbetKapat-----------------------\\
+//-----------------------SohbetKapat-----------------------\\
 
-
-
-
-
-
-
-
-
-//-----------------------SunucuPanel Son-----------------------\\
-//-----------------------SunucuPanel Son-----------------------\\
-//-----------------------SunucuPanel Son-----------------------\\
-//-----------------------SunucuPanel Son-----------------------\\
+client.on("message", async msg => {
+    if(msg.author.bot) return;
+    if(msg.channel.type === "dm") return;
+        
+    let i = await db.fetch(`sohbet_${msg.guild.id}`) 
+          if (i == 'acik') {
+              const sohbet = ["", " ", "  ", "   ", "    ", "     ", "     ", "      ", "        ",];
+              if (sohbet.some(word => msg.content.toLowerCase().includes(word))) {
+                try {
+                  if (!msg.member.hasPermission("ADMINISTRATOR")) {
+                    msg.delete();                   
+                    let embed = new Discord.RichEmbed()
+                    .setColor(0xffa300)
+                    .setFooter('CraftingRoyal BOT  -|-  Sohbet Sistemi.', client.user.avatarURL)
+                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
+                    .setDescription("CraftingRoyal BOT Sohbet Sistemi , " + `***${msg.guild.name}***` + " adlı sunucunuzda Sohbet Eden Biti Var")
+                    .addField('Sohbet Eden kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
+                    .addField('Engellenen mesaj', msg.content, true)
+                    .setTimestamp()                   
+                    msg.guild.owner.user.send(embed)            
+                    return msg.channel.send(`${msg.author.tag}, Bir Yetkili Sohbeti Kapatmış Yazamasın <a:yak:681126681582501900>`).then(msg => msg.delete(25000));
+                  }             
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+          }
+          if (!i) return;
+  });
 
