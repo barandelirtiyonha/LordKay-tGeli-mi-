@@ -539,8 +539,19 @@ client.on("message", async message => {
 client.on('message', async (msg, member, guild) => {
   let i = await  db.fetch(`saas_${msg.guild.id}`)
       if(i === 'açık') {
-        if (msg.content.toLowerCase() === 'sa') {
+        if (msg.content.toLowerCase() === 'sa'){
+          
         msg.reply('Aleyküm Selam Hoşgeldin <a:hz:681134656527269962>');    
+      }
+      }
+    });
+
+client.on('message', async (msg, member, guild) => {
+  let i = await  db.fetch(`saas_${msg.guild.id}`)
+      if(i === 'açık') {
+        if (msg.content.toLowerCase() === 'hi'){
+          
+        msg.reply('Hi welcome <a:hz:681134656527269962>');    
       }
       }
     });
