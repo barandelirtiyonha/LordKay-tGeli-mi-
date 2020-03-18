@@ -12,7 +12,7 @@ exports.run = async (bot, message, args) =>
     
     {
       var mentionedRole = message.mentions.roles.first();
-      if (!mentionedRole) return message.channel.send("**Doğru Kullanım = fg!otorol @<roladı> #<metinkanalı>**".then(msg => msg.delete(5000)));
+      if (!mentionedRole) return message.channel.send("**Doğru Kullanım = cr!otorol @<roladı> #<metinkanalı>**".then(msg => msg.delete(5000)));
       
 
     if(!profil[message.guild.id]){
