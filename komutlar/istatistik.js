@@ -17,9 +17,9 @@ exports.run = async (bot, message, args) => {
   .addField("» **<a:di:681084642371305582> Discord.JS sürüm <a:di:681084642371305582>**", "v"+Discord.version, true)
   .addField("» **<a:di:681084642371305582> Node.JS sürüm <a:di:681084642371305582>**", `${process.version}`, true)
   .addField("» **<a:di:681084642371305582> Ping <a:di:681084642371305582>**", bot.ping+" ms", true)
-  .addField("» **<a:di:681084642371305582> CPU <a:di:681084642371305582>**", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
   .addField("» **<a:di:681084642371305582> Bit <a:di:681084642371305582>**", `\`${os.arch()}\``, true)
   .addField("» **<a:di:681084642371305582> İşletim Sistemi <a:di:681084642371305582>**", `\`\`${os.platform()}\`\``) 
+  .addField("» **<a:di:681084642371305582> CPU <a:di:681084642371305582>**", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
   .addField("**»<a:di:681084642371305582> Bot Davet <a:di:681084642371305582>**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=681938616611897365&scope=bot&permissions=2146958847)", )
   .addField("**»<a:di:681084642371305582> Destek Sunucusu <a:di:681084642371305582>**", " [Sunucumuza Katıl](https://discord.gg/SupP7w6)", )
  return message.channel.send(istatistikler);
