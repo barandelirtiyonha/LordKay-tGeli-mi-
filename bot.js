@@ -999,7 +999,7 @@ client.on("message", msg => {
   if(spamEngel == "açık"){
 
 
-let spamEngel = JSON.parse(fs.readFileSync("./ayarlar/spamEngel.json", "utf8"));
+let spamEngel = JSON.parse(fs.readFileSync("./spamEngel.json", "utf8"));
 //istediğiniz yere ekleyin bot.js de
 
 antispam(client, {

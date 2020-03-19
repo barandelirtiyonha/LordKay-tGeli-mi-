@@ -16,7 +16,7 @@ let spamEngel = JSON.parse(fs.readFileSync("./spamEngel.json", "utf8"));
    
   if(aç.includes(args[0])){
     
-    message.channel.send("Spam engel başarıyla açıldı")
+    message.channel.send("<a:onay:681083728440852500>Spam engel başarıyla açıldı<a:onay:681083728440852500>")
     
     db.set(`spamEngel_${message.guild.id}`, "açık")
     
@@ -24,7 +24,7 @@ let spamEngel = JSON.parse(fs.readFileSync("./spamEngel.json", "utf8"));
    
      if(kapat.includes(args[0])){
     
-    message.channel.send("Spam Engel başarıyla kapatıldı")
+    message.channel.send("<a:onay:681083728440852500>Spam Engel başarıyla kapatıldı<a:onay:681083728440852500>")
     
     db.set(`spamEngel_${message.guild.id}`, "kapalı")
     
