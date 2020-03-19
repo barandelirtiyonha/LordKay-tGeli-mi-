@@ -995,38 +995,3 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 //-----------------------Modlog Son-----------------------\\
 //-----------------------Modlog Son-----------------------\\
 //-----------------------Modlog Son-----------------------\\
-
-//-----------------------Spam-Engel-----------------------\\
-//-----------------------Spam-Engel-----------------------\\
-//-----------------------Spam-Engel-----------------------\\
-//-----------------------Spam-Engel-----------------------\\
-
-const antispam = require("discord-anti-spam-tr");
-client.on("message", msg => {
-  const spamEngel = db.get(`spamEngel_${msg.guild.id}`)
-
-  if(spamEngel == "açık"){
-
-
-let spamEngel = JSON.parse(fs.readFileSync("./spamEngel.json", "utf8"));
-//istediğiniz yere ekleyin bot.js de
-
-antispam(client, {
-  uyarmaSınırı: 15, //Uyarılmadan önce aralıkta gönderilmesine izin verilen maksimum mesaj miktarı.
-  banlamaSınırı: 20, //Yasaklanmadan önce aralıkta gönderilmesine izin verilen maksimum ileti miktar.
-  aralık: 100000, // ms kullanıcılarda zaman miktarı, yasaklanmadan önce aralık değişkeninin maksimumunu gönderebilir.
-  // Uyarı mesajı, kullanıcıya hızlı gideceklerini belirten kullanıcıya gönderilir..
-   //Yasak mesaj, yasaklanmış kullanıcıyı ,Banlar
-  maxSpamUyarı: 7,//Bir kullanıcının uyarılmadan önce bir zaman dilimi içinde gönderebileceği maksimum kopya sayısı
-  maxSpamBan: 20, //Bir kullanıcının yasaklanmadan önce bir zaman diliminde gönderebildiği maksimum kopya sayısı
-  zaman: 7, // Spamdan sonraki zaman
-  rolİsimi: "Mute-Susturulmuş" // Spam Atan Kullanıcılar Verilecek Röl
-})
-};
-    }
-)
-
-//-----------------------Spam-Engel Son-----------------------\\
-//-----------------------Spam-Engel Son-----------------------\\
-//-----------------------Spam-Engel Son-----------------------\\
-//-----------------------Spam-Engel Son-----------------------\\
