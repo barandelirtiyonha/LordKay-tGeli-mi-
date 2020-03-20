@@ -161,7 +161,7 @@ client.on("guildMemberAdd", async member => {
   try {
     let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    giriscikiskanali.send(`CraftingRoyal Bot Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir`);
+    giriscikiskanali.send(`Royal Boss Bot Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir`);
   } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
     return console.log(e)
   }
@@ -196,7 +196,7 @@ client.on("guildMemberAdd", async member => {
   skanal31.send(
    ` \`${
        member.user.tag
-    }\` CraftingRoyal Bot Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+    }\` Royal Boss Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı.  `
   );
 });
@@ -210,7 +210,7 @@ client.on("guildMemberRemove", async member => {
   skanal31.send(
     ` \`${
       member.user.tag
-    }\`CraftingRoyal Bot Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+    }\`Royal Boss Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı `
   );
 });
@@ -458,7 +458,7 @@ client.on("message", async message => {
             )
           );
         message.guild
-          .createChannel(`🎮》Zula Odası`, "voice")
+          .createChannel(`🎮》Gta 5 Odası`, "voice")
           .then(channel =>
             channel.setParent(
               message.guild.channels.find(
@@ -494,7 +494,7 @@ client.on("message", async message => {
             )
           );
         message.guild
-          .createChannel(`🎮》MineCraft Odası`, "voice")
+          .createChannel(`🎮》Minecraft Odası`, "voice")
           .then(channel =>
             channel.setParent(
               message.guild.channels.find(
@@ -503,7 +503,7 @@ client.on("message", async message => {
             )
           );
         message.guild
-          .createChannel(`🎮》RobLox Odası`, "voice")
+          .createChannel(`🎮》Arma 3 Odası`, "voice")
           .then(channel =>
             channel.setParent(
               message.guild.channels.find(
@@ -512,7 +512,7 @@ client.on("message", async message => {
             )
           );
         message.guild
-          .createChannel(`🎮》WolfTeam Odası`, "voice")
+          .createChannel(`🎮》Garrys Mod Odası`, "voice")
           .then(channel =>
             channel.setParent(
               message.guild.channels.find(
