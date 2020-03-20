@@ -7,7 +7,7 @@ const stripIndents = require('common-tags').stripIndents
 exports.run = function(client, message, args) {
     var soru = args.join(' ');
     
-    if(!soru) return message.reply('Bir işlem belirtin. **Doğru Kullanım**: s!hesapla <işlem>')
+    if(!soru) return message.reply('Bir işlem belirtin. **Doğru Kullanım**: -hesapla <işlem>')
     else { let cevap;
         try {
             cevap = math.eval(soru)

@@ -18,7 +18,7 @@ exports.run = async(client, message, args) => {
       
     db.delete(`küfürFiltre_${message.guild.id}`)
     
-    message.channel.send(`Küfür Filtresini Kapattım CraftingRoyal Bot`)
+    message.channel.send(`Küfür Filtresini Kapattım`)
   }
  
 };
