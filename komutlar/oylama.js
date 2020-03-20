@@ -8,17 +8,16 @@ module.exports.run = async (client, message, args) => {
 
   let d = await db.fetch(`okanal_${message.guild.id}`)
   const sea = message.guild.channels.get(d)
-  if (!sea) return message.channel.send('Oylama kanalı ayarlanmamış. Ayarlamak için `cr!oylama-kanal #kanal`')
+  if (!sea) return message.channel.send('Oylama kanalı ayarlanmamış. Ayarlamak için `-oylama-kanal #kanal`')
 
     let yazi = args.slice(0).join(' ')
     if (!yazi) return message.channel.send('Lütfen Oylamada Ne Olacağını Yaz!')
     message.channel.send(`Oylama gönderildi. Gönderilen kanal: <#${d}>`)
     const embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
+    .setColor("RED")
     .addField('**Oylama Var!**', `**${yazi}**`)
     .setThumbnail(``)
-    .setFooter(`'${message.author.username} oylama yaptı.'`)
-    .setAuthor(`**${client.user.username} Oylama**`)
+    .setAuthor(`${client.user.username} Oylama`)
     sea.send('||@everyone|| ||@here||',{embed: embed}).then(m => { 
    let re = m.react('✅');
    let ra = m.react('❌');

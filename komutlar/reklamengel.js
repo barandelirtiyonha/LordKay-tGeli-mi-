@@ -4,13 +4,13 @@ const db = require('quick.db');
 exports.run = async(client, message, args) => {
 
   if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(` Bu komudu kullanabilmek için "ADMINISTRATOR" yetkisine sahip olman gerek.`)
-  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`cr!link-engel aç\` | Kapatmak İstiyorsanız \`cr!link-engel kapat\` Yazabilirsiniz`)
-  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`cr!link-engel aç\` | Kapatmak İstiyorsanız \`cr!link-engel  kapat\` Yazabilirsiniz`)
+  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-link-engel aç\` | Kapatmak İstiyorsanız \`-link-engel kapat\` Yazabilirsiniz`)
+  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-link-engel aç\` | Kapatmak İstiyorsanız \`-link-engel  kapat\` Yazabilirsiniz`)
 
     if (args[0] == 'aç') {
     db.set(`reklamFiltre_${message.guild.id}`, 'acik')
     let i = await db.fetch(`reklamFiltre_${message.guild.id}`)
-  message.channel.send(`Reklam Filtresi başarıyla ayarlandı CraftingRoyal Bot`)   
+  message.channel.send(`Reklam Filtresi başarıyla ayarlandı`)   
     
   }
 
@@ -18,7 +18,7 @@ exports.run = async(client, message, args) => {
       
     db.delete(`reklamFiltre_${message.guild.id}`)
     
-    message.channel.send(`Reklam Filtresini Kapattım CraftingRoyal Bot`)
+    message.channel.send(`Reklam Filtresini Kapattım`)
   }
  
 };

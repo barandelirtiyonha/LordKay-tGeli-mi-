@@ -4,13 +4,13 @@ const db = require('quick.db');
 exports.run = async(client, message, args) => {
 
   if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(` Bu komudu kullanabilmek için "ADMINISTRATOR" yetkisine sahip olman gerek.`)
-  if (!args[0]) return message.channel.send(`:no_entry: Küfür Filtresini Ayarlamak İçin \`cr!küfür-engel aç\` | Kapatmak İstiyorsanız \`cr!küfür-engel kapat\` Yazabilirsiniz`)
+  if (!args[0]) return message.channel.send(`:no_entry: Küfür Filtresini Ayarlamak İçin \`-küfür-engel aç\` | Kapatmak İstiyorsanız \`-küfür-engel kapat\` Yazabilirsiniz`)
   if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Küfür Filtresini Ayarlamak İçin \`-küfür-engel aç\` | Kapatmak İstiyorsanız \`-küfür-engel  kapat\` Yazabilirsiniz`)
 
     if (args[0] == 'aç') {
     db.set(`küfürFiltre_${message.guild.id}`, 'acik')
     let i = await db.fetch(`reklamFiltre_${message.guild.id}`)
-  message.channel.send(`Küfür Filtresi başarıyla ayarlandı CraftingRoyal Bot`)   
+  message.channel.send(`Küfür Filtresi başarıyla ayarlandı`)   
     
   }
 
