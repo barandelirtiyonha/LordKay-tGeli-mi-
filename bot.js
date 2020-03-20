@@ -161,7 +161,7 @@ client.on("guildMemberAdd", async member => {
   try {
     let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    giriscikiskanali.send(`<a:onay:681083728440852500>Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir.<a:onay:681083728440852500>`);
+    giriscikiskanali.send(`CraftingRoyal Bot Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir`);
   } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
     return console.log(e)
   }
@@ -196,8 +196,8 @@ client.on("guildMemberAdd", async member => {
   skanal31.send(
    ` \`${
        member.user.tag
-    }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı. <a:onay:681083728440852500> `
+    }\` CraftingRoyal Bot Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+      member.guild.members.size}\` Kullanıcı Kaldı.  `
   );
 });
 
@@ -210,8 +210,8 @@ client.on("guildMemberRemove", async member => {
   skanal31.send(
     ` \`${
       member.user.tag
-    }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı <a:aniblobsweat:683240339758120969>`
+    }\`CraftingRoyal Bot Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+      member.guild.members.size}\` Kullanıcı Kaldı `
   );
 });
 
@@ -230,10 +230,10 @@ client.on("message", async message => {
     )
       return message.channel.send(" Bot Paneli Zaten Ayarlanmış.");
     message.channel.send(
-      `Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
+      `CraftingRoyal Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
     );
     if (!message.member.hasPermission("Yönetici"))
-      if (message.author.id !== "466324444391014400")
+      if (message.author.id !== "Yapımcı İd !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         return message.channel.send(
           " Bu Kodu `Yapımcım  Olan Kişi Kullanabilir."
         );
@@ -624,7 +624,7 @@ client.on("guildMemberAdd", async member => {
              if (!msg.member.hasPermission("ADMINISTRATOR")) {
                if (!msg.mentions.users.first()) {
                  msg.delete()
-                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte<a:yak:681126681582501900>`).then(m => m.delete(5000))
+                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte. CraftingRoyal Bot`).then(m => m.delete(5000))
      }
        }
      }
@@ -653,7 +653,7 @@ let rrrsembed = new Discord.RichEmbed()
 .addField('Sunucudaki Kişi Sayısı', ` \`\`\`${guild.memberCount}\`\`\` `)
 .setThumbnail(`${guild.iconURL} `)
 
-   client.channels.get('685776379718926396').send(rrrsembed);
+   client.channels.get('Oda Kodu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!').send(rrrsembed);
  });
 
 //Bot Atılma Mesaj Kodu
@@ -667,7 +667,7 @@ let rrrsembed = new Discord.RichEmbed()
 .addField('Sunucudaki Kişi Sayısı', ` \`\`\`${guild.memberCount}\`\`\` `)
 .setThumbnail(`${guild.iconURL} `)
 
-   client.channels.get('685776379718926396').send(rrrsembed);
+   client.channels.get('Oda Kodu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!').send(rrrsembed);
  
 });
 
@@ -701,7 +701,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author.tag}, <a:hz:681134656527269962>Reklam Yapmak Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun. CraftingRoyal Bot`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -731,7 +731,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)            
-                    return msg.channel.send(`${msg.author.tag}, <a:hz:681134656527269962>Küfür Etmek Yasak Bunu Biliyorsun<a:yak:681126681582501900>`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun. CraftingRoyal Bot`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -746,45 +746,6 @@ client.on("message", async msg => {
 //-----------------------Küfür Engel Link Engel Son-----------------------\\
 //-----------------------Küfür Engel Link Engel Son-----------------------\\
 
-//-----------------------SohbetKapat-----------------------\\
-//-----------------------SohbetKapat-----------------------\\
-//-----------------------SohbetKapat-----------------------\\
-//-----------------------SohbetKapat-----------------------\\
-
-client.on("message", async msg => {
-    if(msg.author.bot) return;
-    if(msg.channel.type === "dm") return;
-        
-    let i = await db.fetch(`sohbet_${msg.guild.id}`) 
-          if (i == 'acik') {
-              const sohbet = ["", " ", "  ", "   ", "    ", "     ", "     ", "      ", "        ",];
-              if (sohbet.some(word => msg.content.toLowerCase().includes(word))) {
-                try {
-                  if (!msg.member.hasPermission("ADMINISTRATOR")) {
-                    msg.delete();                   
-                    let embed = new Discord.RichEmbed()
-                    .setColor(0xffa300)
-                    .setFooter('CraftingRoyal BOT  -|-  Sohbet Sistemi.', client.user.avatarURL)
-                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("CraftingRoyal BOT Sohbet Sistemi , " + `***${msg.guild.name}***` + " adlı sunucunuzda Sohbet Eden Biti Var")
-                    .addField('Sohbet Eden kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
-                    .addField('Engellenen mesaj', msg.content, true)
-                    .setTimestamp()                   
-                    msg.guild.owner.user.send(embed)            
-                    return msg.channel.send(`${msg.author.tag}, <a:hz:681134656527269962>Bir Yetkili Sohbeti Kapatmış Yazamasın<a:hz:681134656527269962>`).then(msg => msg.delete(25000));
-                  }             
-                } catch(err) {
-                  console.log(err);
-                }
-              }
-          }
-          if (!i) return;
-  });
-
-//-----------------------SohbetKapat Son-----------------------\\
-//-----------------------SohbetKapat Son-----------------------\\
-//-----------------------SohbetKapat Son-----------------------\\
-//-----------------------SohbetKapat Son-----------------------\\
 
 //-----------------------Modlog-----------------------\\
 //-----------------------Modlog-----------------------\\

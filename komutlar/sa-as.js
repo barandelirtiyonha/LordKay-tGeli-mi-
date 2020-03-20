@@ -8,12 +8,12 @@ exports.run = async (bot, message, args) => {
 
   if (args[0] == 'aç') {
     db.set(`saas_${message.guild.id}`, 'açık')
-      message.channel.send(`<a:onay:681083728440852500>**Sa-As Sistemi Açıldı**<a:onay:681083728440852500>`)
+      message.channel.send(`**Sa-As Sistemi Açıldı** CraftingRoyal Bot`)
    
   }
   if (args[0] == 'kapat') {
     db.set(`saas_${message.guild.id}`, 'kapali')
-      message.channel.send(`<a:onay:681083728440852500>**Sa-As Sistemi Kapandı**<a:onay:681083728440852500>`)
+      message.channel.send(`**Sa-As Sistemi Kapandı** CraftingRoyal Bot`)
    
   }
 

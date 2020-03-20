@@ -32,7 +32,7 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: ['mod-log','modlog'],
-    permLevel: 0 ,//Kendi permlerinize göre ayarlayın,
+    permLevel: 0 ,
   kategori:'moderasyon'
 };
 

@@ -33,7 +33,7 @@ exports.run = async (bot, message, args) =>
     })
 
     const embed = new Discord.RichEmbed()
-        .setDescription(`:white_check_mark: Otorol Başarılıyla ${args[0]} Olarak Ayarlanmıştır. \nOtorol Mesaj Kanalı Başarılıyla ${mentionedChannel} Olarak Ayarlanmıştır. \n\nOto Mesajı Kapatmak İçin **cr!otomesajkapat** Yazmanız Yeterlidir.`)
+        .setDescription(`:white_check_mark: Otorol Başarılıyla ${args[0]} Olarak Ayarlanmıştır. \nOtorol Mesaj Kanalı Başarılıyla ${mentionedChannel} Olarak Ayarlanmıştır. \n\nOto Mesajı Kapatmak İçin **cr!otomesajkapat** Yazmanız Yeterlidir. CraftingRoyal Bot`)
         .setColor("RANDOM")
         .setTimestamp()
     message.channel.send({embed})

@@ -14,7 +14,7 @@ const limit = args[0] ? args[0] : 0;
 if (limit > 120) {
     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Süre limiti maksimum **120** saniye olabilir.").setColor("#36393F"));
 }
-    message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`Yazma süre limiti **${limit}** saniye olarak ayarlanmıştır.`).setColor("#36393F"));
+    message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`Yazma süre limiti **${limit}** saniye olarak ayarlanmıştır. CraftingRoyal Bot`).setColor("#36393F"));
 var request = require('request');
 request({
     url: `https://discordapp.com/api/v7/channels/${message.channel.id}`,

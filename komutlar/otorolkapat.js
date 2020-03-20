@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
             console.log(err)
         })
         const embed = new Discord.RichEmbed()
-            .setDescription(`<a:onay:681083728440852500>**Otorol Başarılı Bir Şekilde Sıfırlanmıştır.**<a:onay:681083728440852500>`)
+            .setDescription(`**Otorol Başarılı Bir Şekilde Sıfırlanmıştır.** CraftingRoyal Bot`)
             .setColor("RANDOM")
             .setTimestamp()
         message.channel.send({embed})
