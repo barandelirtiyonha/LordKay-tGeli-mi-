@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
             const embed = new Discord.RichEmbed()
                 .setDescription(`**Otorolü Ayarlamadığın İçin Sıfırlayamazsın.**`)
                 .setColor("RED")
-                .setTimestamp('Ayarlamak İçin cr!otorol @roladi')
+                .setTimestamp('Ayarlamak İçin -otorol @roladi')
             message.channel.send({embed})
             return
         }

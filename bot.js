@@ -230,7 +230,7 @@ client.on("message", async message => {
     )
       return message.channel.send(" Bot Paneli Zaten Ayarlanmış.");
     message.channel.send(
-      `CraftingRoyal Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
+      `Royal Boss Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
     );
     if (!message.member.hasPermission("Yönetici"))
       if (message.author.id !== "536470606166622208")
@@ -541,7 +541,7 @@ client.on('message', async (msg, member, guild) => {
       if(i === 'açık') {
         if (msg.content.toLowerCase() === 'sa'){
           
-        msg.reply('Aleyküm Selam Hoşgeldin <a:hz:681134656527269962>');    
+        msg.reply('Aleyküm Selam Hoşgeldin');    
       }
       }
     });
@@ -551,7 +551,7 @@ client.on('message', async (msg, member, guild) => {
       if(i === 'açık') {
         if (msg.content.toLowerCase() === 'hi'){
           
-        msg.reply('Hi welcome <a:hz:681134656527269962>');    
+        msg.reply('Hi welcome ');    
       }
       }
     });
@@ -624,7 +624,7 @@ client.on("guildMemberAdd", async member => {
              if (!msg.member.hasPermission("ADMINISTRATOR")) {
                if (!msg.mentions.users.first()) {
                  msg.delete()
-                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte. CraftingRoyal Bot`).then(m => m.delete(5000))
+                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte. Royal Boss`).then(m => m.delete(5000))
      }
        }
      }
@@ -701,7 +701,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun. CraftingRoyal Bot`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun. Royal Boss`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -731,7 +731,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)            
-                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun. CraftingRoyal Bot`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun. Royal Boss`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);

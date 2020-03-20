@@ -7,12 +7,12 @@ exports.run = async (bot, message, args) =>
 {
       let profil = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
   var mentionedChannel = message.mentions.channels.first();
-  if (!mentionedChannel && args[0] !== "sıfırla") return message.channel.send("Otorol Sistemini Eğer Çalıştıramıyorsanız Rollerden Bu Rolü Herkesden Bahsete Tıklayıp Yazarsanız Hata Almazsınız. \nÖrnek Kullanım Şekli: **cr!otorol @Üye #otorol** \n\n**Oto Yazıyı Kapatmamı İstiyorsan cr!kapat otoyazı**");
+  if (!mentionedChannel && args[0] !== "sıfırla") return message.channel.send("Otorol Sistemini Eğer Çalıştıramıyorsanız Rollerden Bu Rolü Herkesden Bahsete Tıklayıp Yazarsanız Hata Almazsınız. \nÖrnek Kullanım Şekli: **-otorol @Üye #otorol kanal** \n\n**Oto Yazıyı Kapatmamı İstiyorsan -kapat otoyazı**");
   if (message.guild.member(message.author.id).hasPermission(0x8))
     
     {
       var mentionedRole = message.mentions.roles.first();
-      if (!mentionedRole) return message.channel.send("**Doğru Kullanım = cr!otorol @<roladı> #<metinkanalı>**".then(msg => msg.delete(5000)));
+      if (!mentionedRole) return message.channel.send("**Doğru Kullanım = -otorol @<roladı> #<metinkanalı>**".then(msg => msg.delete(5000)));
       
 
     if(!profil[message.guild.id]){

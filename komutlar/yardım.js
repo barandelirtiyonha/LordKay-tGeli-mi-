@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
         .setAuthor(`${client.user.username} `, client.user.avatarURL)
         .setColor('#00ff1f')
-        .setTitle(`${client.user.username} - Komutlar **BETA 0.0.1**`)
+        .setTitle(`${client.user.username} - Komutlar`)
         .setDescription(`**${ayarlar.prefix}yetkili** Yetkili Komutları.\n **${ayarlar.prefix}kullanıcı** Kullanıcıya Komutları.\n ` + `**${ayarlar.prefix}eğlence** Eğlence Komutlarını Gösterir.\n`)  
         .setThumbnail(client.user.avatarURL)
         .setImage("")  

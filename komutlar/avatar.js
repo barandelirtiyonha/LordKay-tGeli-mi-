@@ -29,5 +29,5 @@ exports.help = {
   name: 'avatar',
   category: 'kullanıcı',
   description: 'Belirtilen Kişinin veya Komutu Yazan Kişinin Avatarını Atar.',
-  usage: 'cr!avatar <@kişi-etiket> veya cr!avatar'
+  usage: '-avatar <@kişi-etiket> veya cr!avatar'
 };
