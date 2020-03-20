@@ -26,7 +26,7 @@ message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`Mod-Log kanal�
 console.log(`Mod-log komutu ${message.author.username} Tarafından kullanıldı`)
 };
 
-//CodEming //Jr.Escomat
+//Mechanic Code //Baran
 
 exports.conf = {
     enabled: true,

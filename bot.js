@@ -233,7 +233,7 @@ client.on("message", async message => {
       `CraftingRoyal Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
     );
     if (!message.member.hasPermission("Yönetici"))
-      if (message.author.id !== "Yapımcı İd !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      if (message.author.id !== "536470606166622208")
         return message.channel.send(
           " Bu Kodu `Yapımcım  Olan Kişi Kullanabilir."
         );
@@ -521,7 +521,7 @@ client.on("message", async message => {
             )
           );
 
-        message.channel.send("Gerekli Herşey Kuruldu İyi Eğelenceler!");
+        message.channel.send("Gerekli Herşey Kuruldu İyi Eğlenceler!");
       });
   }
 });
@@ -653,7 +653,7 @@ let rrrsembed = new Discord.RichEmbed()
 .addField('Sunucudaki Kişi Sayısı', ` \`\`\`${guild.memberCount}\`\`\` `)
 .setThumbnail(`${guild.iconURL} `)
 
-   client.channels.get('Oda Kodu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!').send(rrrsembed);
+   client.channels.get('690670667531812919').send(rrrsembed);
  });
 
 //Bot Atılma Mesaj Kodu
@@ -667,7 +667,7 @@ let rrrsembed = new Discord.RichEmbed()
 .addField('Sunucudaki Kişi Sayısı', ` \`\`\`${guild.memberCount}\`\`\` `)
 .setThumbnail(`${guild.iconURL} `)
 
-   client.channels.get('Oda Kodu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!').send(rrrsembed);
+   client.channels.get('690670667531812919').send(rrrsembed);
  
 });
 
@@ -694,9 +694,9 @@ client.on("message", async msg => {
                     msg.delete();                   
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
-                    .setFooter('CraftingRoyal BOT  -|-  Reklam engellendi.', client.user.avatarURL)
+                    .setFooter('Reklam engellendi.', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("CraftingRoyal BOT Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .setDescription("Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
                     .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
@@ -724,9 +724,9 @@ client.on("message", async msg => {
                     msg.delete();                   
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
-                    .setFooter('CraftingRoyal BOT  -|-  Küfür Engel.', client.user.avatarURL)
+                    .setFooter('Küfür Engel.', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("CraftingRoyal BOT Küfür sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
+                    .setDescription("Küfür sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
                     .addField('Küfür eden kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
