@@ -14,21 +14,20 @@ const request = require('request');
 const snekfetch = require('snekfetch');
 const queue = new Map();
 const YouTube = require('simple-youtube-api');
-const ytdl = require('ytdl-core');
-
-
-//-----------------------------------------------\\
 const http = require('http');
 const express = require('express');
 const app = express();
 app.get("/", (request, response) => {
-  console.log("Hostlandı");
+  console.log("Ne ölmesi kardeşim bayılmışım");
   response.sendStatus(200);
 });
 app.listen(8000);
 setInterval(() => {
-  http.get(`http://bosproje.glitch.me/`);
+  http.get(`http://trexdash.glitch.me/`);//Glitch linkinizi doğru şekilde girin!
 }, 280000)
+
+const ytdl = require('ytdl-core');
+
 //-----------------------------------------------\\
 
 var prefix = ayarlar.prefix;
