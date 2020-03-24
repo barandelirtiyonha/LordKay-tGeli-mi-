@@ -195,7 +195,7 @@ client.on("guildMemberAdd", async member => {
   skanal31.send(
    ` \`${
        member.user.tag
-    }\` Royal Boss Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+    }\`Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı.  `
   );
 });
@@ -209,7 +209,7 @@ client.on("guildMemberRemove", async member => {
   skanal31.send(
     ` \`${
       member.user.tag
-    }\`Royal Boss Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+    }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı `
   );
 });
