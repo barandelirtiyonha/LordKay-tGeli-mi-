@@ -1,7 +1,4 @@
-
 const Discord = require('discord.js');
-
-
 exports.run = function(client, message, args) {
     if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
@@ -31,29 +28,29 @@ exports.run = function(client, message, args) {
   if(messagecount>0){
     if(101>messagecount){
  const musti = messagecount
- message.channel.bulkDelete(baran)
+ message.channel.bulkDelete()
     return message.channel.sendEmbed(sohbetsilindi).then(msg => msg.delete(5000));
 }else if(201>messagecount){
  const musti = messagecount-100
- message.channel.bulkDelete(baran)
+ message.channel.bulkDelete()
 message.channel.bulkDelete(100);
     return message.channel.sendEmbed(sohbetsilindi).then(msg => msg.delete(5000));
 }else if(301>messagecount){
- const musti = messagecount-200
- message.channel.bulkDelete(baran)
+ const baran = messagecount-200
+ message.channel.bulkDelete()
 message.channel.bulkDelete(100);
 message.channel.bulkDelete(100);
     return message.channel.sendEmbed(sohbetsilindi).then(msg => msg.delete(5000));
 }else if(401>messagecount){
- const musti = messagecount-300
- message.channel.bulkDelete(baran)
+ const baran = messagecount-300
+ message.channel.bulkDelete(100)
 message.channel.bulkDelete(100);
 message.channel.bulkDelete(100);
 message.channel.bulkDelete(100);
     return message.channel.sendEmbed(sohbetsilindi).then(msg => msg.delete(5000));
 }else if(501>messagecount){
- const musti = messagecount-400
- message.channel.bulkDelete(baran)
+ const baran = messagecount-400
+message.channel.bulkDelete(100)
 message.channel.bulkDelete(100);
 message.channel.bulkDelete(100);
 message.channel.bulkDelete(100);
