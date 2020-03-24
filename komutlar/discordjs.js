@@ -1,28 +1,20 @@
 const Discord = require('discord.js');
+
 module.exports.run = async (bot, message, args, guild, user) => {
     let sahip = message.member
-   let jsrolu = message.guild.roles.find('name', 'rol')
-  if(message.guild.id !== '692045635074916433') return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu komudu sadece [Kod Paylaşım](https://discord.gg/6rATm8b) sunucusunda kullanabilirsin.').setColor('RED'));
+   let jsrolu = message.guild.roles.find('name', 'Rol')
+  if(message.guild.id !== 'Sunucu idsi') return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu komudu sadece [Kod Paylaşım](...........) sunucusunda kullanabilirsin.').setColor('RED'));
     if(!jsrolu) return message.channel.send('Bu sunucuda **JS** isminde bir rol bulunmamakta.')
-      if(message.member.roles.has(jsrolu.id)) return message.channel.send('Rolü verirken bir hata ortaya çıktı. Bu hatalar şunlar olabilir:\n\n1-) Botun rolü, komudu kullanan kişinin üstünde değil.\n2-) Bota gerekli yetkileri vermemişsin.\n3-) Bu rol zaten sende bulunmakta.\n\nEğer bunları yaptıysan ve olmadıysa, ** Baran #0972 **\'e ulaş.')
+      if(message.member.roles.has(jsrolu.id)) return message.channel.send('Rolü verirken bir hata ortaya çıktı. Bu hatalar şunlar olabilir:\n\n1-) Botun rolü, komudu kullanan kişinin üstünde değil.\n2-) Bota gerekli yetkileri vermemişsin.\n3-) Bu rol zaten sende bulunmakta.\n\nEğer bunları yaptıysan ve olmadıysa, **<@417633615204188171> | Y.G.V.#2993**\'e ulaş.')
 
   try {
       await (sahip.addRole(jsrolu.id));
       message.channel.send('Başarıyla **JS** rolü verilmiştir! :white_check_mark:')
     } catch (error) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
-      return message.channel.send('Rolü verirken bir hata ortaya çıktı. Bu hatalar şunlar olabilir:\n\n1-) Botun rolü, komudu kullanan kişinin üstünde değil.\n2-) Bota gerekli yetkileri vermemişsin.\n3-) Bu rol zaten sende bulunmakta.\n\nEğer bunları yaptıysan ve olmadıysa, ** Baran #*0972 **\'e ulaş.')
+      return message.channel.send('Rolü verirken bir hata ortaya çıktı. Bu hatalar şunlar olabilir:\n\n1-) Botun rolü, komudu kullanan kişinin üstünde değil.\n2-) Bota gerekli yetkileri vermemişsin.\n3-) Bu rol zaten sende bulunmakta.\n\nEğer bunları yaptıysan ve olmadıysa, **<@417633615204188171> | Y.G.V.#2993**\'e ulaş.')
    
 };
 }
-exports.conf = {
-  enabled: true,
-  guildOnly: true,
-  aliases: [],
-  permLevel: 0
-};
-
 exports.help = {
-  name: "js",
-  description: "Botun pingini gösterir.",
-  usage: "ping"
+  name: 'js'
 };
