@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
   
   user.setNickname(`${isim} | ${yas}`)
   user.addRole(db.fetch(`kayıt_${message.guild.id}`))
-  message.channel.send(`${message.author} Sunucuya Başarıyla Kayıt oldun`)
+  message.channel.send(`${message.author} Sunucuya Başarıyla Kayıt oldun !`)
   message.guild.channels.get(db.fetch(`kayıtlog_${message.guild.id}`)).send(`🗒 ${message.author} Adlı kullanıcı Başarılı Şekilde Kayıt Oldu `);
 
   /*client.on("guildMemberAdd",async message => {
