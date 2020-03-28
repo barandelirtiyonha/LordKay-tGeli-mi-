@@ -191,10 +191,10 @@ client.on("guildMemberAdd", async member => {
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
   skanal31.send(
-   ` \`${
+   ` \**${
        member.user.tag
-    }\`Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı.  `
+    }\** Adlı Kullanıcı Sunucuya Katıldı. \**${sayac}\** Kullanıcı Olmaya \**${sayac -
+      member.guild.members.size}\** Kullanıcı Kaldı.`
   );
 });
 
@@ -205,10 +205,10 @@ client.on("guildMemberRemove", async member => {
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
   skanal31.send(
-    ` \`${
+    ` \**${
       member.user.tag
-    }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı `
+    }\** Adlı Kullanıcı Sunucudan Ayrıldı. \**${sayac}\** Kullanıcı Olmaya \**${sayac -
+      member.guild.members.size}\** Kullanıcı Kaldı.`
   );
 });
 
