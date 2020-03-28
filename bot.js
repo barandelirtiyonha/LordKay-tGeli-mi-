@@ -194,7 +194,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal31) return;
   skanal31.send(
    ` \`${
-       {member}
+      <@${member.id}>
     }\`Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı.  `
   );
@@ -208,7 +208,7 @@ client.on("guildMemberRemove", async member => {
   if (!skanal31) return;
   skanal31.send(
     ` \`${
-      {member}
+      member
     }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı `
   );
