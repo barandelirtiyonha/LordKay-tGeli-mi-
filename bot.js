@@ -772,7 +772,7 @@ client.on('channelDelete', async channel => {
   const c = channel.guild.channels.get(db.fetch(`codeminglog_${channel.guild.id}`));
   if (!c) return;
     let embed = new Discord.RichEmbed()
-                    .addField(`Kanal silindi`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\n��� ID: ${channel.id}`)
+                    .addField(`Kanal silindi`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\n ID: ${channel.id}`)
                     .setTimestamp()
                     .setColor("RANDOM")
                     .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
