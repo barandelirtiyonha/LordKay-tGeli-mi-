@@ -160,7 +160,7 @@ client.on("guildMemberAdd", async member => {
   try {
     let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    giriscikiskanali.send(`Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verilmiştir`);
+    giriscikiskanali.send(`Hoşgeldin **${member.reply}** Rolün Başarılı Bir Şekilde Verilmiştir`);
   } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
     return console.log(e)
   }
