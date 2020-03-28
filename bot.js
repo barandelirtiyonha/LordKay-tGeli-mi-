@@ -149,7 +149,7 @@ client.on("guildMemberAdd", async member => {
   let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8")); 
   let embed = new Discord.RichEmbed()
     .setTitle('Otorol Sistemi')
-    .setDescription(`:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Başarılıyla Verilmiştir. `)
+    .setDescription(`:loudspeaker: :inbox_tray:  @${member}'a Otorol Başarılıyla Verilmiştir. `)
 .setColor("GREEN")
     .setFooter("ForumGrand", client.user.avatarURL);
 
@@ -160,7 +160,7 @@ client.on("guildMemberAdd", async member => {
   try {
     let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    giriscikiskanali.send(`Hoşgeldin **${member.reply}** Rolün Başarılı Bir Şekilde Verilmiştir`);
+    giriscikiskanali.send(`Hoşgeldin ${member} Rolün Başarılı Bir Şekilde Verilmiştir`);
   } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
     return console.log(e)
   }
@@ -194,7 +194,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal31) return;
   skanal31.send(
    ` \`${
-       member.user.tag
+       member.user
     }\`Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı.  `
   );
@@ -208,7 +208,7 @@ client.on("guildMemberRemove", async member => {
   if (!skanal31) return;
   skanal31.send(
     ` \`${
-      member.user.tag
+      member.user
     }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
       member.guild.members.size}\` Kullanıcı Kaldı `
   );
