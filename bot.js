@@ -14,20 +14,21 @@ const request = require('request');
 const snekfetch = require('snekfetch');
 const queue = new Map();
 const YouTube = require('simple-youtube-api');
+const ytdl = require('ytdl-core');
+
+
+//-----------------------------------------------\\
 const http = require('http');
 const express = require('express');
 const app = express();
 app.get("/", (request, response) => {
-  console.log("Ne ölmesi kardeşim bayılmışım");
+  console.log("Hostlandı");
   response.sendStatus(200);
 });
 app.listen(8000);
 setInterval(() => {
-  http.get(`http://trexdash.glitch.me/`);//Glitch linkinizi doğru şekilde girin!
+  http.get(`http://bosproje.glitch.me/`);
 }, 280000)
-
-const ytdl = require('ytdl-core');
-
 //-----------------------------------------------\\
 
 var prefix = ayarlar.prefix;
@@ -149,7 +150,7 @@ client.on("guildMemberAdd", async member => {
   let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8")); 
   let embed = new Discord.RichEmbed()
     .setTitle('Otorol Sistemi')
-    .setDescription(`:loudspeaker: :inbox_tray:  @${member}'a Otorol Başarılıyla Verilmiştir !`)
+    .setDescription(`:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Başarılıyla Verilmiştir. `)
 .setColor("GREEN")
     .setFooter("ForumGrand", client.user.avatarURL);
 
@@ -160,7 +161,7 @@ client.on("guildMemberAdd", async member => {
   try {
     let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    giriscikiskanali.send(`Hoşgeldin ${member} Rolün Başarılı Bir Şekilde Verilmiştir !`);
+    giriscikiskanali.send(`Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir`);
   } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
     return console.log(e)
   }
@@ -180,10 +181,9 @@ client.on("guildMemberAdd", async (member) => {
 //-----------------------Otorol Son-----------------------\\
 //-----------------------Otorol Son-----------------------\\
 
-
-//-----------------------SAYAÇ SİSTEMİ-------------------\\
-//-----------------------SAYAÇ SİSTEMİ-------------------\\
-//-----------------------SAYAÇ SİSTEMİ-------------------\\
+//-----------------------Sayaç-----------------------\\
+//-----------------------Sayaç-----------------------\\
+//-----------------------Sayaç-----------------------\\
 
 client.on("guildMemberAdd", async member => {
   let sayac = await db.fetch(`sayac_${member.guild.id}`);
@@ -191,8 +191,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(` \`${member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -member.guild.members.size}\` Kullanıcı Kaldı.`
-  );
+  skanal31.send(` \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı.  ` );
 });
 
 client.on("guildMemberRemove", async member => {
@@ -201,19 +200,18 @@ client.on("guildMemberRemove", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send( ` \`${member.user.tag  }\` Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -member.guild.members.size}\` Kullanıcı Kaldı.`
-  );
+  skanal31.send(` \`${  member.user.tag }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı `);
 });
 
-//---------------------SAYAÇ SİSTEMİ SON-------------------\\
-//---------------------SAYAÇ SİSTEMİ SON-------------------\\
-//---------------------SAYAÇ SİSTEMİ SON-------------------\\
+//-----------------------Sayaç Son-----------------------\\
+//-----------------------Sayaç Son-----------------------\\
+//-----------------------Sayaç Son-----------------------\\
+
 
 //-----------------------SunucuKur-----------------------\\
 //-----------------------SunucuKur-----------------------\\
 //-----------------------SunucuKur-----------------------\\
 //-----------------------SunucuKur-----------------------\\
-
 
 client.on("message", async message => {
   const ms = require("ms");
@@ -229,10 +227,10 @@ client.on("message", async message => {
     )
       return message.channel.send(" Bot Paneli Zaten Ayarlanmış.");
     message.channel.send(
-      `Royal Boss Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
+      `CraftingRoyal Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
     );
     if (!message.member.hasPermission("Yönetici"))
-      if (message.author.id !== "536470606166622208")
+      if (message.author.id !== "Yapımcı İd !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         return message.channel.send(
           " Bu Kodu `Yapımcım  Olan Kişi Kullanabilir."
         );
@@ -493,16 +491,7 @@ client.on("message", async message => {
             )
           );
         message.guild
-          .createChannel(`🎮》Minecraft Odası`, "voice")
-          .then(channel =>
-            channel.setParent(
-              message.guild.channels.find(
-                channel => channel.name === "|▬▬|Oyun Odaları|▬▬|"
-              )
-            )
-          );
-        message.guild
-          .createChannel(`🎮》Arma 3 Odası`, "voice")
+          .createChannel(`🎮》MineCraft Odası`, "voice")
           .then(channel =>
             channel.setParent(
               message.guild.channels.find(
@@ -519,8 +508,17 @@ client.on("message", async message => {
               )
             )
           );
+        message.guild
+          .createChannel(`🎮》Arma 3 Odası`, "voice")
+          .then(channel =>
+            channel.setParent(
+              message.guild.channels.find(
+                channel => channel.name === "|▬▬|Oyun Odaları|▬▬|"
+              )
+            )
+          );
 
-        message.channel.send("Gerekli Herşey Kuruldu İyi Eğlenceler!");
+        message.channel.send("Gerekli Herşey Kuruldu İyi Eğelenceler!");
       });
   }
 });
@@ -540,7 +538,7 @@ client.on('message', async (msg, member, guild) => {
       if(i === 'açık') {
         if (msg.content.toLowerCase() === 'sa'){
           
-        msg.reply('Aleyküm Selam , Hoşgeldin');    
+        msg.reply('Aleyküm Selam, Hoşgeldin ');    
       }
       }
     });
@@ -559,72 +557,6 @@ client.on('message', async (msg, member, guild) => {
 //-----------------------Sa-As Son-----------------------\\
 //-----------------------Sa-As Son-----------------------\\
 //-----------------------Sa-As Son-----------------------\\
-
-
-//-----------------------Sunucu Panel--------------------\\
-//-----------------------Sunucu Panel--------------------\\
-//-----------------------Sunucu Panel--------------------\\
-
-client.on('message', async message => { // bot bilgi paneli üye sayısı bot sayısı falan
-  const ms = require('ms');
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-  let u = message.mentions.users.first() || message.author;
-  if (command === "serverpanelkaldır") {
- if (!message.guild.channels.find(channel => channel.name === "Server Panel")) return message.channel.send("**Server Panel Ayarlanmamış!**")
-   if (!message.member.hasPermission('ADMINISTRATOR'))
-  return message.channel.send(" Yetkin bulunmuyor.");
-    const a = message.guild.channels.find(channel => channel.name === "Server Panel").delete()
-      if(!a) return console.log("guildStats")
-      const b = message.guild.channels.find(channel => channel.name === `Toplam Üye • ${message.guild.members.filter( member => member.user.bot).size} bot / ${message.guild.memberCount} üye`, true)
-      if(!b) return console.log("guildStatsMember")
-      const c = message.guild.channels.find(channel => channel.name === `Rekor Online •${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`).delete()
-      if(!c) return console.log("guildStatsBot")
-     const m = message.guild.channels.find(channel => channel.name === `Bot Sayısı • ${client.guilds.reduce((a, b) => a + b.onlinememberCount, 0).toLocaleString()}`).delete()
-      if(!m) return console.log("guildStatsOnlineBot")
-      const d = message.guild.channels.find(channel => channel.name === `Toplam Kanal: ${client.channels.size.toLocaleString()}`).delete() //|| message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-2}`).delete()
-      if(!d) return console.log("guildStatsChannel")
-      message.channel.send("**Kanallar Temizlendi!**")
-    }
-  if (command === "serverpanel") {
-  if (message.guild.channels.find(channel => channel.name === "Server Panel")) return message.channel.send(" Bot Paneli Zaten Ayarlanmış.")
-  message.channel.send(`**Server Panel Odalarının Kurulumunun Başlamasını İstiyorsanız 'başlat Yazınız!'**`)
-      if (!message.member.hasPermission('ADMINISTRATOR'))
-  return message.channel.send(" Yetkin bulunmuyor.");
-      message.channel.awaitMessages(response => response.content === 'başlat', {
-        max: 1,
-        time: 10000,
-        errors: ['time'],
-      })
-    .then((collected) => {
-   message.guild.createChannel('Server Panel', 'category', [{
-  id: message.guild.id,
-  deny: ['SPEAK'],
-  deny: ['CONNECT']  
-}]);
-        
- message.guild.createChannel(`Toplam Üye • ${message.guild.memberCount}`, 'voice')
-.then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "Server Panel")));
-message.guild.createChannel(`Çevrimiçi Üye • ${client.users.filter(cfx => cfx.presence.status === 'online').size}`, 'voice')
-.then(channel =>
-       channel.setParent(message.guild.channels.find(channel => channel.name === "Server Panel")));
-message.guild.createChannel(`Botlar •  ${message.guild.members.filter(m => m.user.bot).size}`, 'voice')
-.then(channel =>
-             channel.setParent(message.guild.channels.find(channel => channel.name === "Server Panel")));
-message.guild.createChannel(`Rekor Online • Bakımda!`, 'voice')
-.then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "Server Panel")));
-  message.channel.send("Bot Bilgi Paneli Ayarlandı!")
- 
-        })    
-    
-}
-});
-
-//---------------------Sunucu Panel Son----------------\\
-//---------------------Sunucu Panel Son----------------\\
-//---------------------Sunucu Panel Son----------------\\
 
 //-----------------------Güvenlik-----------------------\\
 //-----------------------Güvenlik-----------------------\\
@@ -689,7 +621,7 @@ client.on("guildMemberAdd", async member => {
              if (!msg.member.hasPermission("ADMINISTRATOR")) {
                if (!msg.mentions.users.first()) {
                  msg.delete()
-                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte. Royal Boss`).then(m => m.delete(5000))
+                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte. CraftingRoyal Bot`).then(m => m.delete(5000))
      }
        }
      }
@@ -766,7 +698,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun. Royal Boss`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun. CraftingRoyal Bot`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -789,14 +721,14 @@ client.on("message", async msg => {
                     msg.delete();                   
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
-                    .setFooter('Küfür Engel.', client.user.avatarURL)
+                    .setFooter('  Küfür Engel.', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("Küfür sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
+                    .setDescription("Küfür sistemi " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
                     .addField('Küfür eden kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)            
-                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun. Royal Boss`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun.`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
@@ -831,7 +763,7 @@ client.on('channelDelete', async channel => {
   const c = channel.guild.channels.get(db.fetch(`codeminglog_${channel.guild.id}`));
   if (!c) return;
     let embed = new Discord.RichEmbed()
-                    .addField(`Kanal silindi`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\n ID: ${channel.id}`)
+                    .addField(`Kanal silindi`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\n��� ID: ${channel.id}`)
                     .setTimestamp()
                     .setColor("RANDOM")
                     .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
