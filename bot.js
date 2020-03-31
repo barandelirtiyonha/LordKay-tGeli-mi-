@@ -201,8 +201,7 @@ client.on("guildMemberRemove", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(
-    ` \`${member.user.tag  }\` Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -member.guild.members.size}\` Kullanıcı Kaldı.`
+  skanal31.send( ` \`${member.user.tag  }\` Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -member.guild.members.size}\` Kullanıcı Kaldı.`
   );
 });
 
