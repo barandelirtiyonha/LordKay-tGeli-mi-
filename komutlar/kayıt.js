@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
 
   const samet = await db.fetch(`kayıtk_${message.guild.id}`)
   if(samet == null) return message.channel.send('Kayıt Sistemi eklemek için <`-kayıt-rol @rol`/`-kayıt-kanal #kanal`/`-kayıt-log #kanal`> şeklinde Ayarlıya bilirsiniz. ');
-  if (message.channel.id !== samet) return message.channel.send(`Kayıt Kanalı <#${samet}> Suan Burda`);
+  if (message.channel.id !== samet) return message.channel.send(`Kayıt Kanalı <#${samet}> Şuanda Burası !`);
   if (samet == true) return; 
   if (samet == false) return message.channel.send(`Kayıt Sistemi Aktif değil`);
  /* client.on('',{

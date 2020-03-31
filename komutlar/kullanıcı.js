@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
         .setAuthor(`${client.user.username} `, client.user.avatarURL)
         .setColor('0x36393E')
         .setTitle(`${client.user.username} - Kullanıcı - Komutlar`)
-        .setDescription(`**${ayarlar.prefix}avatar @kulanıcı** Avatarını Gösterir\n ` + `**${ayarlar.prefix}sunucubilgi**  Sunucunun bilgilerini gönderir.\n` + `**${ayarlar.prefix}ping**  Bot pingini gösterir.\n` + `**${ayarlar.prefix}havadurumu** Hava Durumunu Gösterir.\n` + `**${ayarlar.prefix}top5** Botun En İyi Sunucularını Gösterir (Yeni!)\n` + `**${ayarlar.prefix}yasaklar** Sunucudan Banlananları Göstetir\n`+`**${ayarlar.prefix}üyedurum** Üyelerin Durumunu Gösterir\n`+`**${ayarlar.prefix}kayıt** Kayıt Sistemini Gösterir\n **${ayarlar.prefix}döviz** Döviz Kurlarını Gösterir.\n `)  
+        .setDescription(`**${ayarlar.prefix}avatar @kulanıcı** Avatarını Gösterir\n ` + `**${ayarlar.prefix}sunucubilgi**  Sunucunun bilgilerini gönderir.\n` + `**${ayarlar.prefix}ping**  Bot pingini gösterir.\n` + `**${ayarlar.prefix}havadurumu** Hava Durumunu Gösterir.\n` + `**${ayarlar.prefix}top5** Botun En İyi Sunucularını Gösterir (Yeni!)\n` + `**${ayarlar.prefix}yasaklar** Sunucudan Banlananları Göstetir\n`+`**${ayarlar.prefix}üyedurum** Üyelerin Durumunu Gösterir\n` + `**${ayarlar.prefix}döviz** Döviz Kurlarını Gösterir.\n `)  
         .setThumbnail(client.user.avatarURL)
         .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
     return message.channel.sendEmbed(embed);

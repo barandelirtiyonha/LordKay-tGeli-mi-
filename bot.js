@@ -161,7 +161,7 @@ client.on("guildMemberAdd", async member => {
   try {
     let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    giriscikiskanali.send(`Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir`);
+    giriscikiskanali.send(`Hoşgeldin ${member} Rolün Başarılı Bir Şekilde Verilmiştir`);
   } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
     return console.log(e)
   }
@@ -180,6 +180,48 @@ client.on("guildMemberAdd", async (member) => {
 //-----------------------Otorol Son-----------------------\\
 //-----------------------Otorol Son-----------------------\\
 //-----------------------Otorol Son-----------------------\\
+
+//-----------------------ototag---------------------------\\
+//-----------------------ototag---------------------------\\
+//-----------------------ototag---------------------------\\
+
+client.on("guildMemberAdd", async member => {
+  let rol = await db.fetch(`ototag_${member.guild.id}`);
+  let kanal = await db.fetch(`ototagk_${member.guild.id}`);
+  let msj = await db.fetch(`ototagmsj_${member.guild.id}`);
+  if (!rol) return;
+  if (!kanal) return;
+
+  if (!msj) {
+    member.setNickname(`${rol} | ${member.user.username}`);
+    const embed = new Discord.RichEmbed()
+      .setColor("BLACK")
+      .setDescription(
+        `<a:tik:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı kişiye tag verildi!`
+      )
+      .setFooter(client.user.username, client.user.avatarURL);
+    client.channels.get(kanal).send(embed);
+    return;
+  } else {
+    var msj2 = msj
+      .replace(`-uye-`, `${member.user.username}`)
+      .replace(`-tag-`, `${rol}`);
+    member.setNickname(msj2);
+    const embed = new Discord.RichEmbed()
+      .setColor("BLACK")
+      .setDescription(
+        `<a:tik:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı kişiye tag verildi!`
+      )
+      .setFooter(client.user.username, client.user.avatarURL);
+    client.channels.get(kanal).send(embed);
+    return;
+  }
+});
+
+//-----------------------ototag son---------------------------\\
+//-----------------------ototag son---------------------------\\
+//-----------------------ototag son---------------------------\\
+
 
 //-----------------------Sayaç-----------------------\\
 //-----------------------Sayaç-----------------------\\
