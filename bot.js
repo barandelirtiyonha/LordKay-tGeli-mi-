@@ -187,9 +187,9 @@ client.on("guildMemberAdd", async (member) => {
 
 const yourID = "536470606166622208"; //Instructions on how to get this: https://redd.it/40zgse //Kendi İD'nizi Yazın
 const setupCMD = "-kayıtol" //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
-let initialMessage = ``; //Dilediğiniz Şeyi Yazabilirsiniz
-const roles = ["", ""]; //İstediğiniz Rolü Yazabilirsiniz
-const reactions = ["", ""]; //İstediğiniz Emojiyi Ekleyebilirsiniz
+let initialMessage = `Kuralları Okumayı Unutmayın !`; //Dilediğiniz Şeyi Yazabilirsiniz
+const roles = ["Üye","Üye"]; //İstediğiniz Rolü Yazabilirsiniz
+const reactions = [":galatasarayavatarprofilfotografl:", ""]; //İstediğiniz Emojiyi Ekleyebilirsiniz
 const botToken = "NjgxMjMxODg0NzY3OTg1Njk0.XnUz_w.THFKgm1fN4-VvdMnQeTOSMQvPA8";  //Buraya botunuzun tokenini koyunuz
                      
 
