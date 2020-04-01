@@ -185,73 +185,57 @@ client.on("guildMemberAdd", async (member) => {
 //-----------------------emojili kayıt--------------------\\
 //-----------------------emojili kayıt--------------------\\
 
-const yourID = "536470606166622208"; //Instructions on how to get this: https://redd.it/40zgse //Kendi İD'nizi Yazın
-const setupCMD = "-kayıtol" //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
-let initialMessage = `Kuralları Okumayı Unutmayın !`; //Dilediğiniz Şeyi Yazabilirsiniz
-const roles = ["Üye","Üye"]; //İstediğiniz Rolü Yazabilirsiniz
-const reactions = [":galatasarayavatarprofilfotografl:", ""]; //İstediğiniz Emojiyi Ekleyebilirsiniz
-const botToken = "NjgxMjMxODg0NzY3OTg1Njk0.XnUz_w.THFKgm1fN4-VvdMnQeTOSMQvPA8";  //Buraya botunuzun tokenini koyunuz
-                     
+const events = {
+	MESSAGE_REACTION_ADD: 'messageReactionAdd',
+	MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
+};
 
-//Load up the bot...
-const discord = require('discord.js');
-const bot = new Discord.Client();
-bot.login(botToken);
-
-//If there isn't a reaction for every role, scold the user!
-if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
-
-//Function to generate the role messages, based on your settings
-function generateMessages(){
-    var messages = [];
-    messages.push(initialMessage);
-    for (let role of roles) messages.push(`Kayıt Olmak İçin **"${role}"** Emojisine Tıkla!`); //DONT CHANGE THIS
-    return messages;
-}
-
-
-bot.on("message", message => {
-    if (message.author.id == yourID && message.content.toLowerCase() == setupCMD){
-        var toSend = generateMessages();
-        let mappedArray = [[toSend[0], false], ...toSend.slice(1).map( (message, idx) => [message, reactions[idx]])];
-        for (let mapObj of mappedArray){
-            message.channel.send(mapObj[0]).then( sent => {
-                if (mapObj[1]){
-                  sent.react(mapObj[1]);  
-                } 
-            });
-        }
-    }
-})
-
-
-bot.on('raw', event => {
-    if (event.t === 'MESSAGE_REACTION_ADD' || event.t == "MESSAGE_REACTION_REMOVE"){
-        
-        let channel = bot.channels.get(event.d.channel_id);
-        let message = channel.fetchMessage(event.d.message_id).then(msg=> {
-        let user = msg.guild.members.get(event.d.user_id);
-        
-        if (msg.author.id == bot.user.id && msg.content != initialMessage){
-       
-            var re = `\\*\\*"(.+)?(?="\\*\\*)`;
-            var role = msg.content.match(re)[1];
-        
-            if (user.id != bot.user.id){
-                var roleObj = msg.guild.roles.find(r => r.name === role);
-                var memberObj = msg.guild.members.get(user.id);
-                
-                if (event.t === "MESSAGE_REACTION_ADD"){
-                    memberObj.addRole(roleObj)
-                } else {
-                    memberObj.removeRole(roleObj);
-                }
-            }
-        }
-        })
- 
-    }   
+client.on('raw', async event => {
+	if (!events.hasOwnProperty(event.t)) return;
+	const { d: data } = event;
+	const user = client.users.get(data.user_id);
+	const channel = client.channels.get(data.channel_id) || await user.createDM();
+	if (channel.messages.has(data.message_id)) return;
+	const message = await channel.fetchMessage(data.message_id);
+	const emojiKey = (data.emoji.id) ? `${data.emoji.name}:${data.emoji.id}` : data.emoji.name;
+	const reaction = message.reactions.get(emojiKey);
+	client.emit(events[event.t], reaction, user);
 });
+
+client.on('messageReactionAdd', (reaction, user) => {
+  if (reaction.message.id == "694953378232401950") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
+    if (reaction.emoji.name == ":galatasarayavatarprofilfotografl:,694951957235761313 ") {//Dilediğini emojiyi koyabilirsiniz.
+      reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('Üye', 'Üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+	}
+	if (reaction.emoji.name == ":galatasarayavatarprofilfotografl:,694951957235761313") {//Dilediğiniz emojiyi koyabilirsiniz.
+	  reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('üye', 'üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+	}
+	if (reaction.emoji.name == ":galatasarayavatarprofilfotografl:,694951957235761313") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('üye', 'üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+	  }
+    	if (reaction.emoji.name == ":galatasarayavatarprofilfotografl:,694951957235761313") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('üye', 'üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+	  }
+  }
+});
+
+
+client.on('messageReactionRemove', (reaction, user) => {
+	if (reaction.message.id == "mesajID") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
+	  if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+	  }
+	  if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+	  }
+	  if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		  reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+		}
+     if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		  reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+		}
+	}
+  });
 
 //--------------------emojili kayıt son-------------------\\
 //--------------------emojili kayıt son-------------------\\
