@@ -203,18 +203,18 @@ client.on('raw', async event => {
 });
 
 client.on('messageReactionAdd', (reaction, user) => {
-  if (reaction.message.id == "694958054097158205") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
-    if (reaction.emoji.name == "<:galatasarayavatarprofilfotografl:694951957235761313>") {//Dilediğini emojiyi koyabilirsiniz.
-      reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+  if (reaction.message.id == "694961276148908085") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
+    if (reaction.emoji.name == "🇹🇷") {//Dilediğini emojiyi koyabilirsiniz.
+      reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', '《▪Üye▪》'))//Dilediğiniz rolün adını yazabilirsiniz.
 	}
-	if (reaction.emoji.name == "<:galatasarayavatarprofilfotografl:694951957235761313>") {//Dilediğiniz emojiyi koyabilirsiniz.
-	  reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+	if (reaction.emoji.name == "🇹🇷") {//Dilediğiniz emojiyi koyabilirsiniz.
+	  reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', '《▪Üye▪》'))//Dilediğiniz rolün adını yazabilirsiniz.
 	}
-	if (reaction.emoji.name == "<:galatasarayavatarprofilfotografl:694951957235761313>") {//Dilediğiniz emojiyi koyabilirsiniz.
-		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+	if (reaction.emoji.name == "🇹🇷") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', '《▪Üye▪》'))//Dilediğiniz rolün adını yazabilirsiniz.
 	  }
-    	if (reaction.emoji.name == "<:galatasarayavatarprofilfotografl:694951957235761313>") {//Dilediğiniz emojiyi koyabilirsiniz.
-		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'üye'))//Dilediğiniz rolün adını yazabilirsiniz.
+    	if (reaction.emoji.name == "🇹🇷") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', '《▪Üye▪》'))//Dilediğiniz rolün adını yazabilirsiniz.
 	  }
   }
 });
