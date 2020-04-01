@@ -181,46 +181,18 @@ client.on("guildMemberAdd", async (member) => {
 //-----------------------Otorol Son-----------------------\\
 //-----------------------Otorol Son-----------------------\\
 
-//-----------------------ototag---------------------------\\
-//-----------------------ototag---------------------------\\
-//-----------------------ototag---------------------------\\
+//-----------------------gelen üyeye oto mesaj------------~\\
+//-----------------------gelen üyeye oto mesaj------------~\\
+//-----------------------gelen üyeye oto mesaj------------~\\
 
-client.on("guildMemberAdd", async member => {
-  let rol = await db.fetch(`ototag_${member.guild.id}`);
-  let kanal = await db.fetch(`ototagk_${member.guild.id}`);
-  let msj = await db.fetch(`ototagmsj_${member.guild.id}`);
-  if (!rol) return;
-  if (!kanal) return;
+client.on('guildMemberAdd', async (member) => {
+    var kanal = member.guild.channels.get('mesajın gideceği kanal ıd')
+    kanal.send(`Hey! ${member} Sunucumuza Hoşgeldin. Kuralları Okumayı Unutma, Seninle Beraber ${member.guild.memberCount} Kişiyiz!`) ;
+})
 
-  if (!msj) {
-    member.setNickname(`${rol} | ${member.user.username}`);
-    const embed = new Discord.RichEmbed()
-      .setColor("BLACK")
-      .setDescription(
-        `<a:tik:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı kişiye tag verildi!`
-      )
-      .setFooter(client.user.username, client.user.avatarURL);
-    client.channels.get(kanal).send(embed);
-    return;
-  } else {
-    var msj2 = msj
-      .replace(`-uye-`, `${member.user.username}`)
-      .replace(`-tag-`, `${rol}`);
-    member.setNickname(msj2);
-    const embed = new Discord.RichEmbed()
-      .setColor("BLACK")
-      .setDescription(
-        `<a:tik:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı kişiye tag verildi!`
-      )
-      .setFooter(client.user.username, client.user.avatarURL);
-    client.channels.get(kanal).send(embed);
-    return;
-  }
-});
-
-//-----------------------ototag son---------------------------\\
-//-----------------------ototag son---------------------------\\
-//-----------------------ototag son---------------------------\\
+//-----------------------gelen üyeye oto mesaj son------------~\\
+//-----------------------gelen üyeye oto mesaj son------------~\\
+//-----------------------gelen üyeye oto mesaj son------------~\\
 
 
 //-----------------------Sayaç-----------------------\\
