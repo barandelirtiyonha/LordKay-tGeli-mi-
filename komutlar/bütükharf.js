@@ -11,12 +11,12 @@ exports.run = async (client, message, args) => {
   let capslock = await db.fetch(`capslock_${message.guild.id}`)
   if (capslock) {
     db.delete(`capslock_${message.guild.id}`)
-    message.channel.send(`**Capslock engelleme sistemi, kapatıldı**`)
+    message.channel.send(`Capslock Engelleme Sistemi kapatıldı :white_check_mark:`)
   }
  
   if (!capslock) {
     db.set(`capslock_${message.guild.id}`, 'acik')
-    message.channel.send(`**Capslock engelleme sistemi aktif**`)
+    message.channel.send(`Capslock Engelleme Sistemi Aktifleştirildi :white_check_mark:`)
   }
 };
 exports.conf = {
