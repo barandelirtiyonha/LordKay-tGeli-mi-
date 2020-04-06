@@ -247,7 +247,7 @@ client.on('messageReactionRemove', (reaction, user) => {
 
 client.on('guildMemberAdd', async (member) => {
     var kanal = member.guild.channels.get('694945371159265341')
-    kanal.send(`Hey! ${member} Sunucumuza Hoşgeldin. Kuralları Okumayı Unutma, Seninle Beraber ${member.guild.memberCount} Kişiyiz!`) ;
+    kanal.send(`${member} Sunucumuza Hoşgeldin. Kuralları Okumayı Unutma, Seninle Beraber ${member.guild.memberCount} Kişiyiz!`) ;
 })
 
 //-----------------------gelen üyeye oto mesaj son------------~\\
