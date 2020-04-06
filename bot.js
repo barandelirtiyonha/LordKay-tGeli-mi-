@@ -1,3 +1,19 @@
+// Lord Youtube
+
+const express = require('express');
+const app = express();
+const http = require('http');
+    app.get("/", (request, response) => {
+    console.log(`Bot Başarıyla Hostlandı.`);
+    response.sendStatus(200);
+    });
+    app.listen(process.env.PORT);
+    setInterval(() => {
+    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    }, 280000);
+
+// Lord Youtube
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
@@ -15,21 +31,6 @@ const snekfetch = require('snekfetch');
 const queue = new Map();
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-
-
-//-----------------------------------------------\\
-const http = require('http');
-const express = require('express');
-const app = express();
-app.get("/", (request, response) => {
-  console.log("Hostlandı");
-  response.sendStatus(200);
-});
-app.listen(8000);
-setInterval(() => {
-  http.get(`http://bosproje.glitch.me/`);
-}, 280000)
-//-----------------------------------------------\\
 
 var prefix = ayarlar.prefix;
 
