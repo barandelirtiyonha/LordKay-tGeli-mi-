@@ -715,7 +715,7 @@ client.on("guildMemberAdd", async member => {
              if (!msg.member.hasPermission("ADMINISTRATOR")) {
                if (!msg.mentions.users.first()) {
                  msg.delete()
-                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte. CraftingRoyal Bot`).then(m => m.delete(5000))
+                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte.`).then(m => m.delete(5000))
      }
        }
      }
@@ -792,7 +792,7 @@ client.on("message", async msg => {
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
                     msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun. CraftingRoyal Bot`).then(msg => msg.delete(25000));
+                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun.`).then(msg => msg.delete(25000));
                   }             
                 } catch(err) {
                   console.log(err);
