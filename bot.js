@@ -324,7 +324,7 @@ client.on("message", async message => {
       `CraftingRoyal Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
     );
     if (!message.member.hasPermission("Yönetici"))
-      if (message.author.id !== "Yapımcı İd !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      if (message.author.id !== "536470606166622208")
         return message.channel.send(
           " Bu Kodu `Yapımcım  Olan Kişi Kullanabilir."
         );
